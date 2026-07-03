@@ -7,12 +7,6 @@ UnityTeach2 是一个 Unity 基础教程学习仓库，用来跟随「[唐老狮
 ## 项目信息
 
 - Unity 版本：`6000.3.10f1`
-- 课程视频目录：`F:\1aUnity教程\6.［唐老狮]【Unity四部曲_基础】`
-- 已识别视频数量：67 个 `.mp4`
-- 资源包目录：`F:\1aUnity教程\6.［唐老狮]【Unity四部曲_基础】\资源包`
-- GitHub 仓库：`https://github.com/CyreneMine/UnityTeach2.git`
-
-课程视频和压缩资源包属于本地学习资料，不提交到 Git。仓库只保存 Unity 工程、学习文档、课程练习代码和必要资源。
 
 ## 学习范围
 
@@ -27,14 +21,14 @@ UnityTeach2 是一个 Unity 基础教程学习仓库，用来跟随「[唐老狮
 
 ## 仓库结构
 
-- `Assets/`：Unity 资产、脚本、场景和课程练习内容。
-- `Packages/`：Unity 包依赖配置。
-- `ProjectSettings/`：Unity 项目设置。
-- `AGENTS.md`：Codex 在本仓库内协作时必须遵守的规则。
-- `LearningProgress.md`：课程学习进度、验证结果和下一步。
-- `Notes/`：每节课或每个主题的复盘笔记。
-- `Docs/CurrentStatus.md`：当前项目状态快照。
-- `Screenshots/`：必要时保存学习截图或验证截图。
+- [Assets/](Assets/)：Unity 资产、脚本、场景和课程练习内容。
+- [Packages/](Packages/)：Unity 包依赖配置。
+- [ProjectSettings/](ProjectSettings/)：Unity 项目设置。
+- [AGENTS.md](AGENTS.md)：Codex 在本仓库内协作时必须遵守的规则。
+- [LearningProgress.md](LearningProgress.md)：课程学习进度、验证结果和下一步。
+- [Notes/](Notes/)：每节课或每个主题的复盘笔记。
+- [Docs/CurrentStatus.md](Docs/CurrentStatus.md)：当前项目状态快照。
+- [Screenshots/](Screenshots/)：必要时保存学习截图或验证截图。
 
 ## 当前状态
 
@@ -54,4 +48,3 @@ UnityTeach2 是一个 Unity 基础教程学习仓库，用来跟随「[唐老狮
 常规提交信息默认使用中文。提交前先检查 `git status`，避免把 `Library/`、`Logs/`、`UserSettings/`、本地视频、压缩包或无关生成文件提交进仓库。
 
 课程完成或阶段总结时，可以补充 GitHub Release，但必须先确认最终内容、验证方式和发布说明编码。
-
