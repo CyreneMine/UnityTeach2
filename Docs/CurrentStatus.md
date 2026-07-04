@@ -28,6 +28,8 @@
 - 完成 `12.向量点乘  练习题.mp4` 的入侵者角度和距离判断练习。
 - 完成 `14.向量叉乘  练习题.mp4` 的左右方位和非对称扇形判断练习。
 - 归档当前手动拖动物体调试时，不把保存瞬间摆位作为主要判错依据；后续进入输入系统或正式运行逻辑后再恢复检查场景初始位置。
+- 完成 `16.向量插值运算  练习题.mp4` 的摄像机插值跟随和太阳球形插值升降练习。
+- 阶段 02 - 坐标系、向量、点乘、叉乘、插值 已收尾。
 
 ## 当前项目内容
 
@@ -43,6 +45,9 @@
 - `Assets/Scripts/Lesson/Lesson6_向量点乘/Lesson6.unity`
 - `Assets/Scripts/Lesson/Lesson7_向量叉乘/Lesson7.cs`
 - `Assets/Scripts/Lesson/Lesson7_向量叉乘/Lesson7.unity`
+- `Assets/Scripts/Lesson/Lesson8_向量插值/Lesson8.cs`
+- `Assets/Scripts/Lesson/Lesson8_向量插值/Lesson8.unity`
+- `Assets/Materials/Gray.mat`
 - `Packages/manifest.json`
 - `ProjectSettings/`
 
@@ -50,6 +55,6 @@
 
 ## 下一步
 
-1. 继续 `15.向量插值运算.mp4`。
-2. 新练习开始前保留当前点乘和叉乘练习笔记。
+1. 进入 `17.为何使用四元数.mp4`。
+2. 新阶段开始前保留当前向量插值练习笔记。
 3. 每次 push 前先检查学习文档是否跟上代码和场景进度。
