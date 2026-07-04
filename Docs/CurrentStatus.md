@@ -1,6 +1,6 @@
 # UnityTeach2 当前状态
 
-更新时间：2026-07-03
+更新时间：2026-07-04
 
 ## 项目快照
 
@@ -15,19 +15,23 @@
 - 确认当前项目未包含已有 `AGENTS.md`、`README.md` 或 `LearningProgress.md`。
 - 确认课程目录存在，并识别到 67 个 `.mp4` 视频。
 - 建立基础仓库文档和协作规则。
+- 完成 `3.Mathf  练习题.mp4` 的 Lerp 跟随练习。
+- 归档 `Mathf.Lerp` 的理解过程和两种写法区别。
+- 在 `AGENTS.md` 中补充 push 前必须先检查学习文档是否跟上进度的规则。
 
 ## 当前项目内容
 
 - `Assets/Scenes/SampleScene.unity`
 - `Assets/InputSystem_Actions.inputactions`
+- `Assets/Scripts/Lesson1_Mathf/Lesson1.cs`
+- `Assets/Scripts/Lesson1_Mathf/Lesson1.unity`
 - `Packages/manifest.json`
 - `ProjectSettings/`
 
-当前还没有课程脚本。后续每一课的代码、场景、Prefab 或资源变更都应在 `LearningProgress.md` 或 `Notes/` 中记录。
+当前已开始课程脚本和场景练习。后续每一课的代码、场景、Prefab 或资源变更都应在 `LearningProgress.md` 或 `Notes/` 中记录。
 
 ## 下一步
 
-1. 从 `1.概述.mp4` 开始学习。
-2. 完成 `2.Mathf.mp4` 和 `3.Mathf  练习题.mp4` 后记录验证方式。
-3. 每个阶段结束后更新 `LearningProgress.md`。
-
+1. 继续 `4.三角函数.mp4`。
+2. 新练习开始前保留当前 Lerp 练习结果。
+3. 每次 push 前先检查学习文档是否跟上代码和场景进度。
