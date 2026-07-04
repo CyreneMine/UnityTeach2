@@ -7,9 +7,9 @@
 - 课程名称：「[唐老狮] Unity 四部曲 - 基础」
 - 本地视频目录：`F:\1aUnity教程\6.［唐老狮]【Unity四部曲_基础】`
 - 已识别视频：67 个
-- 当前进度：Lesson08 向量模长和单位向量练习已完成，阶段 02 学习中
+- 当前进度：Lesson14 向量叉乘练习已完成，阶段 02 学习中
 - 当前阶段：阶段 02 - 坐标系、向量、点乘、叉乘、插值
-- 下一步：继续 `9.向量加减乘除.mp4`
+- 下一步：继续 `15.向量插值运算.mp4`
 
 备注：课程编号 `45` 是知识点总结，当前不作为主线练习进度的关键节点。
 
@@ -46,6 +46,36 @@
 ```
 
 ## 历史记录
+
+### 2026-07-04 - 完成向量叉乘练习
+
+- 完成 `13.向量叉乘.mp4` 和 `14.向量叉乘  练习题.mp4`：用叉乘判断目标在 A 的左侧或右侧，并结合点乘角度、距离判断入侵范围。
+- 新增脚本和场景：`Assets/Scripts/Lesson/Lesson7_向量叉乘/Lesson7.cs`、`Assets/Scripts/Lesson/Lesson7_向量叉乘/Lesson7.unity`。
+- 核心逻辑：`Vector3.Cross(transform.forward, targetDir).y` 的正负用于区分左右，`Vector3.Dot` 和 `Mathf.Acos` 用于计算夹角。
+- 本节的场景摆位主要用于手动拖动物体调试边界；当前没有输入系统或自动移动逻辑时，不把保存瞬间的 A/B 坐标是否触发作为主要判错依据。
+- 注意点：当前脚本用完整 3D 向量参与角度和距离计算，后续如果题目明确是俯视平面方向判断，可以将方向向量的 `y` 分量归零后再算。
+- 新增笔记：`Notes/Lesson14-CrossProduct-DirectionDetection.md`。
+- 下一步进入 `15.向量插值运算.mp4`。
+
+### 2026-07-04 - 完成向量点乘练习
+
+- 完成 `11.向量点乘.mp4` 和 `12.向量点乘  练习题.mp4`：判断目标是否处于 A 正前方指定角度范围内，并且距离不超过指定范围。
+- 新增脚本和场景：`Assets/Scripts/Lesson/Lesson6_向量点乘/Lesson6.cs`、`Assets/Scripts/Lesson/Lesson6_向量点乘/Lesson6.unity`。
+- 核心逻辑：先计算 A 到 B 的单位方向，再用 `Vector3.Dot` 和 `Mathf.Acos` 得到夹角，同时用 `Vector3.Distance` 判断距离。
+- 手写 `Dot + Acos` 是为了加深理解；实际项目里也可以直接使用 `Vector3.Angle`。
+- 本节的场景摆位主要用于手动拖动物体调试边界；当前没有输入系统或自动移动逻辑时，不把保存瞬间的 A/B 坐标是否触发作为主要判错依据。
+- 新增笔记：`Notes/Lesson12-DotProduct-IntruderDetection.md`。
+- 下一步进入 `13.向量叉乘.mp4`。
+
+### 2026-07-04 - 完成向量加减乘除摄像机跟随练习
+
+- 完成 `10.向量加减乘除  练习题.mp4`：用向量加减乘除实现摄像机跟随目标物体。
+- 新增脚本和场景：`Assets/Scripts/Lesson/Lesson5_向量加减乘除/Lesson5.cs`、`Assets/Scripts/Lesson/Lesson5_向量加减乘除/Lesson5.unity`。
+- 核心公式：`target.position - target.forward * zOffset + target.up * yOffset`，表示摄像机在目标自身后方 `4` 米、上方 `7` 米。
+- 场景中 `Main Camera` 已挂载 `Lesson5`，`zOffset = 4`、`yOffset = 7`，`target` 指向 `Cube`。
+- 复盘了自己一开始的世界坐标写法：`new Vector3(target.position.x, target.position.y + 7, target.position.z - 4)` 只适用于目标朝向固定的情况，不能表达“目标自身后方”。
+- 新增笔记：`Notes/Lesson10-VectorArithmetic-CameraFollow.md`。
+- 下一步进入 `11.向量点乘.mp4`。
 
 ### 2026-07-04 - 完成向量模长和单位向量练习
 

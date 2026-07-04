@@ -23,6 +23,11 @@
 - 在 `AGENTS.md` 中补充检查问题默认用表格展示的规则。
 - 完成 `8.向量模长和单位向量  练习题.mp4` 的理论计算练习。
 - 归档两点距离、向量模长、单位向量的手算过程。
+- 完成 `10.向量加减乘除  练习题.mp4` 的摄像机跟随练习。
+- 归档目标局部前方、局部上方与摄像机偏移公式的理解。
+- 完成 `12.向量点乘  练习题.mp4` 的入侵者角度和距离判断练习。
+- 完成 `14.向量叉乘  练习题.mp4` 的左右方位和非对称扇形判断练习。
+- 归档当前手动拖动物体调试时，不把保存瞬间摆位作为主要判错依据；后续进入输入系统或正式运行逻辑后再恢复检查场景初始位置。
 
 ## 当前项目内容
 
@@ -32,6 +37,12 @@
 - `Assets/Scripts/Lesson/Lesson1_Mathf/Lesson1.unity`
 - `Assets/Scripts/Lesson/Lesson2_三角函数/Lesson2.cs`
 - `Assets/Scripts/Lesson/Lesson2_三角函数/Lesson2.unity`
+- `Assets/Scripts/Lesson/Lesson5_向量加减乘除/Lesson5.cs`
+- `Assets/Scripts/Lesson/Lesson5_向量加减乘除/Lesson5.unity`
+- `Assets/Scripts/Lesson/Lesson6_向量点乘/Lesson6.cs`
+- `Assets/Scripts/Lesson/Lesson6_向量点乘/Lesson6.unity`
+- `Assets/Scripts/Lesson/Lesson7_向量叉乘/Lesson7.cs`
+- `Assets/Scripts/Lesson/Lesson7_向量叉乘/Lesson7.unity`
 - `Packages/manifest.json`
 - `ProjectSettings/`
 
@@ -39,6 +50,6 @@
 
 ## 下一步
 
-1. 继续 `9.向量加减乘除.mp4`。
-2. 新练习开始前保留当前向量模长和单位向量笔记。
+1. 继续 `15.向量插值运算.mp4`。
+2. 新练习开始前保留当前点乘和叉乘练习笔记。
 3. 每次 push 前先检查学习文档是否跟上代码和场景进度。
