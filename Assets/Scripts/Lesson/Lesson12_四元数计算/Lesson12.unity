@@ -582,7 +582,7 @@ MonoBehaviour:
   yOffset: 1
   tiltDeg: 5
   cameraHeight: 0.5
-  followSpeed: 0.05
+  followSpeed: 3
   roundSpeed: 1
 --- !u!1 &1454749350
 GameObject:
