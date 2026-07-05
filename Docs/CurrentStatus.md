@@ -1,6 +1,6 @@
 # UnityTeach2 当前状态
 
-更新时间：2026-07-04
+更新时间：2026-07-05
 
 ## 项目快照
 
@@ -30,6 +30,13 @@
 - 归档当前手动拖动物体调试时，不把保存瞬间摆位作为主要判错依据；后续进入输入系统或正式运行逻辑后再恢复检查场景初始位置。
 - 完成 `16.向量插值运算  练习题.mp4` 的摄像机插值跟随和太阳球形插值升降练习。
 - 阶段 02 - 坐标系、向量、点乘、叉乘、插值 已收尾。
+- 完成 `20.四元数的常用方法  练习题.mp4` 的 `LookRotation`、扩展方法和 `Slerp` 练习。
+- 记录 `Lesson11` 按教程写法封装 `Tools.MyLookAt` 扩展方法，并通过 `cubeA.MyLookAt(target)` 实现 `LookAt` 效果。
+- 记录 `Lesson5` 被复用于四元数常用方法第二题：摄像机用 `Vector3.Lerp` 平滑移动到目标后方上方位置，并用 `Quaternion.Slerp` 缓慢转向目标。
+- 记录用户手动更新 Rider 包依赖到 `com.unity.ide.rider` `3.0.40`。
+- 完成 `22.四元数计算  练习题1.mp4` 的自写版检查点。
+- 记录 `Lesson12` 先直接写核心逻辑，实现单发、双发、扇形和环形发射；后续再根据教程改造成开火方法和发射模式枚举。
+- 记录 `CameraFollow` 实现摄像机斜后方跟随、滚轮限制距离、看向目标头顶附近，并使用 `Vector3.Lerp` 和 `Quaternion.Slerp` 过渡。
 
 ## 当前项目内容
 
@@ -47,6 +54,14 @@
 - `Assets/Scripts/Lesson/Lesson7_向量叉乘/Lesson7.unity`
 - `Assets/Scripts/Lesson/Lesson8_向量插值/Lesson8.cs`
 - `Assets/Scripts/Lesson/Lesson8_向量插值/Lesson8.unity`
+- `Assets/Scripts/Lesson/Lesson11_四元数常用方法/Lesson11.cs`
+- `Assets/Scripts/Lesson/Lesson11_四元数常用方法/Tools.cs`
+- `Assets/Scripts/Lesson/Lesson11_四元数常用方法/Lesson11.unity`
+- `Assets/Scripts/Lesson/Lesson12_四元数计算/Lesson12.cs`
+- `Assets/Scripts/Lesson/Lesson12_四元数计算/CameraFollow.cs`
+- `Assets/Scripts/Lesson/Lesson12_四元数计算/BulletObj.cs`
+- `Assets/Scripts/Lesson/Lesson12_四元数计算/Bullet.prefab`
+- `Assets/Scripts/Lesson/Lesson12_四元数计算/Lesson12.unity`
 - `Assets/Materials/Gray.mat`
 - `Packages/manifest.json`
 - `ProjectSettings/`
@@ -55,6 +70,6 @@
 
 ## 下一步
 
-1. 进入 `17.为何使用四元数.mp4`。
-2. 新阶段开始前保留当前向量插值练习笔记。
+1. 根据教程写法改造 `22.四元数计算  练习题1.mp4`，对比自写核心逻辑和封装写法。
+2. 继续后续 `23.四元数计算 练习题2.mp4`。
 3. 每次 push 前先检查学习文档是否跟上代码和场景进度。

@@ -1,15 +1,15 @@
 # UnityTeach2 学习进度
 
-更新时间：2026-07-04
+更新时间：2026-07-05
 
 ## 总览
 
 - 课程名称：「[唐老狮] Unity 四部曲 - 基础」
 - 本地视频目录：`F:\1aUnity教程\6.［唐老狮]【Unity四部曲_基础】`
 - 已识别视频：67 个
-- 当前进度：Lesson16 向量插值运算练习已完成，阶段 02 已完成
-- 当前阶段：阶段 02 - 坐标系、向量、点乘、叉乘、插值
-- 下一步：进入 `17.为何使用四元数.mp4`
+- 当前进度：Lesson22 四元数计算练习题1自写版已完成，阶段 03 学习中
+- 当前阶段：阶段 03 - 四元数
+- 下一步：根据教程写法改造 `22.四元数计算  练习题1.mp4`
 
 备注：课程编号 `45` 是知识点总结，当前不作为主线练习进度的关键节点。
 
@@ -19,7 +19,7 @@
 | --- | --- | --- | --- |
 | 01 | 概述、`Mathf`、三角函数 | 已完成 | 能说明常用 API、完成练习、在 Unity 中验证输出 |
 | 02 | 坐标系、向量、点乘、叉乘、插值 | 已完成 | 能解释方向/长度/角度含义，并用场景或调试线验证 |
-| 03 | 四元数 | 未开始 | 能说明欧拉角和四元数差异，验证旋转结果 |
+| 03 | 四元数 | 学习中 | 能说明欧拉角和四元数差异，验证旋转结果 |
 | 04 | 延迟函数、协同程序、协程原理 | 未开始 | 能说明生命周期、停止条件和时间缩放影响 |
 | 05 | 特殊文件夹、`Resources`、场景异步加载 | 未开始 | 能验证路径、异步状态、卸载和 Build Settings 边界 |
 | 06 | `LineRenderer`、范围检测、射线检测 | 未开始 | 能验证坐标、层级、碰撞体和 Debug 可视化 |
@@ -46,6 +46,30 @@
 ```
 
 ## 历史记录
+
+### 2026-07-05 - 完成四元数计算练习题1自写版检查点
+
+- 完成 `21.四元数计算.mp4` 和 `22.四元数计算  练习题1.mp4` 的自写版练习。
+- 新增脚本、场景和 Prefab：`Assets/Scripts/Lesson/Lesson12_四元数计算/Lesson12.cs`、`Assets/Scripts/Lesson/Lesson12_四元数计算/CameraFollow.cs`、`Assets/Scripts/Lesson/Lesson12_四元数计算/BulletObj.cs`、`Assets/Scripts/Lesson/Lesson12_四元数计算/Bullet.prefab`、`Assets/Scripts/Lesson/Lesson12_四元数计算/Lesson12.unity`。
+- 第一题先按自己的节奏写核心逻辑，没有照教程封装开火方法和发射模式枚举；当前实现了单发、双发、扇形和环形四种发射方式。
+- 第二题新增 `CameraFollow`，实现独立摄像机跟随目标斜后方、鼠标滚轮控制距离、看向目标头顶附近，并用 `Vector3.Lerp` 和 `Quaternion.Slerp` 做位置与朝向过渡。
+- 检查发现并修正：目标移动或旋转时，现在会同时重置位置插值和旋转插值，避免只移动不转向或只旋转不平滑跟随。
+- 当前保留的学习边界：环形发射 `-180` 到 `180` 会包含同一方向的两端；`using System;` 仍有未使用项；后续准备根据教程写法进行面向对象封装。
+- ProjectSettings 已切到 `activeInputHandler: 2`，保证旧版 `Input.GetAxis("Mouse ScrollWheel")` 可以在当前项目输入设置下工作。
+- 新增笔记：`Notes/Lesson22-QuaternionCalculationExercise1.md`。
+- 下一步根据教程改造本题，重点对比“直接写核心逻辑”和“封装发射模式/开火方法”的差异。
+
+### 2026-07-05 - 完成四元数常用方法练习
+
+- 完成 `17.为何使用四元数.mp4`、`18.四元数是什么.mp4`、`19.四元数的常用方法.mp4` 和 `20.四元数的常用方法  练习题.mp4`。
+- 新增脚本和场景：`Assets/Scripts/Lesson/Lesson11_四元数常用方法/Lesson11.cs`、`Assets/Scripts/Lesson/Lesson11_四元数常用方法/Tools.cs`、`Assets/Scripts/Lesson/Lesson11_四元数常用方法/Lesson11.unity`。
+- 第一题按教程写法封装 `MyLookAt` 扩展方法，内部使用 `Quaternion.LookRotation(target.position - obj.position)` 实现 `LookAt` 的效果，并在 `Lesson11` 中调用 `cubeA.MyLookAt(target)`。
+- 第二题直接在之前摄像机移动练习 `Assets/Scripts/Lesson/Lesson5_向量加减乘除/Lesson5.cs` 中，将摄像机位置改为 `Vector3.Lerp` 平滑移动，并用 `Quaternion.Slerp` 缓慢看向目标。
+- 用户手动更新 Rider 包依赖：`Packages/manifest.json` 中 `com.unity.ide.rider` 更新到 `3.0.40`，`Packages/packages-lock.json` 同步更新。
+- 检查发现：`Lesson5` 已将目标变化检测移动到插值前，避免使用旧 `time` 先插值一帧；当前写法属于“平滑移动并持续平滑看向目标”的学习实现。
+- 新增笔记：`Notes/Lesson20-QuaternionCommonMethods.md`。
+- 本次先只更新文档，不 push；等四元数阶段全部结束后再统一提交和推送。
+- 下一步进入 `21.四元数计算.mp4`。
 
 ### 2026-07-04 - 完成向量插值运算练习，阶段 02 收尾
 
