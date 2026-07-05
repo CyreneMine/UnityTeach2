@@ -7,9 +7,9 @@
 - 课程名称：「[唐老狮] Unity 四部曲 - 基础」
 - 本地视频目录：`F:\1aUnity教程\6.［唐老狮]【Unity四部曲_基础】`
 - 已识别视频：67 个
-- 当前进度：阶段 03 - 四元数 已收尾
-- 当前阶段：阶段 04 - 延迟函数、协同程序
-- 下一步：进入延迟函数、协同程序相关课程
+- 当前进度：阶段 04 - 延迟函数、协同程序、协程原理 已收尾
+- 当前阶段：阶段 05 - 特殊文件夹、`Resources`、场景异步加载
+- 下一步：明天尽量学完 31-44p 的后续基础知识点；后天进入 46-68p 小项目实践
 
 备注：课程编号 `45` 是知识点总结，当前不作为主线练习进度的关键节点。
 
@@ -20,7 +20,7 @@
 | 01 | 概述、`Mathf`、三角函数 | 已完成 | 能说明常用 API、完成练习、在 Unity 中验证输出 |
 | 02 | 坐标系、向量、点乘、叉乘、插值 | 已完成 | 能解释方向/长度/角度含义，并用场景或调试线验证 |
 | 03 | 四元数 | 已完成 | 能说明欧拉角和四元数差异，验证旋转结果 |
-| 04 | 延迟函数、协同程序、协程原理 | 未开始 | 能说明生命周期、停止条件和时间缩放影响 |
+| 04 | 延迟函数、协同程序、协程原理 | 已完成 | 能说明生命周期、停止条件和时间缩放影响 |
 | 05 | 特殊文件夹、`Resources`、场景异步加载 | 未开始 | 能验证路径、异步状态、卸载和 Build Settings 边界 |
 | 06 | `LineRenderer`、范围检测、射线检测 | 未开始 | 能验证坐标、层级、碰撞体和 Debug 可视化 |
 | 07 | 综合实践 UI 与数据准备 | 未开始 | 能验证面板引用、数据读写、交互状态和分辨率适配 |
@@ -46,6 +46,18 @@
 ```
 
 ## 历史记录
+
+### 2026-07-05 - 延迟函数、协同程序和协程原理阶段收尾
+
+- 完成 `24.延迟函数.mp4`、`25.延迟函数  练习题.mp4`、`26.协同程序1.mp4`、`27.协同程序2.mp4`、`28.协同程序  练习题.mp4`、`29.协同程序原理.mp4` 和 `30.协同程序原理  练习题.mp4`。
+- 新增练习文件：`Assets/Scripts/Lesson/Lesson13_延迟函数/Lesson13.cs`、`Assets/Scripts/Lesson/Lesson13_延迟函数/Lesson13.unity`、`Assets/Scripts/Lesson/Lesson14_协同程序/Lesson14.cs`、`Assets/Scripts/Lesson/Lesson14_协同程序/Lesson14.unity`、`Assets/Scripts/Lesson/Lesson15_协同程序原理/Lesson15.cs`、`Assets/Scripts/Lesson/Lesson15_协同程序原理/Lesson15.unity`、`Assets/Scripts/Lesson/Lesson15_协同程序原理/CoroutineMgr.cs`、`Assets/Scripts/Lesson/Lesson15_协同程序原理/Lesson15answer.cs`。
+- `Lesson13` 练习了 `InvokeRepeating` 每秒计数、`Destroy(gameObject, 2f)` 延迟销毁、`Invoke("DelayDestroy", 2f)` 延迟调用方法；当前保留了两种销毁写法并记录其重叠验证边界。
+- `Lesson14` 练习了 `StartCoroutine`、`WaitForSeconds` 和分帧生成大量方块；当前按教程思路每生成约 1000 个方块让出一帧，避免一次性生成 100000 个方块造成明显卡顿。
+- `Lesson15` 先手写 `IEnumerator` + `MoveNext()` 模拟“一秒执行一次部分逻辑”，再按教程思路新增 `CoroutineMgr`，用列表保存协程和下一次执行时间。
+- 复盘确认：`if (coroutines[i].time > Time.time) continue;` 与教程的 `if (coroutines[i].time <= Time.time) { ... }` 是同一判断的反向写法，当前不会造成时间判断 bug。
+- 记录边界：当前 `CoroutineMgr` 只支持本题要求的 `int` 秒数返回值；不支持 `WaitForSeconds`、`yield return null`、嵌套协程、停止协程等完整 Unity 协程能力。
+- 新增笔记：`Notes/Lesson13-DelayFunction.md`、`Notes/Lesson14-Coroutine.md`、`Notes/Lesson15-CoroutinePrinciple.md`。
+- 阶段 04 按当前学习节奏收尾。明天计划尽量完成 31-44p 后续基础知识点；后天进入 46-68p 小项目实践。
 
 ### 2026-07-05 - 四元数阶段收尾复盘
 

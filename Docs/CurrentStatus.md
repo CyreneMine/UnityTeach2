@@ -39,7 +39,13 @@
 - 记录 `CameraFollow` 实现摄像机斜后方跟随、滚轮限制距离、看向目标头顶附近，并使用 `Vector3.Lerp` 和 `Quaternion.Slerp` 过渡。
 - 完成四元数阶段收尾复盘：明确方向向量、偏移量、世界坐标点和 `LookRotation` 参数之间的区别。
 - 归档摄像机跟随公式：目标观察点 `target.position + target.up * cameraHeight`，摄像机方向 `Quaternion.AngleAxis(tiltDeg, target.right) * -target.forward`，摄像机目标点 `观察点 + 方向 * 距离`，看回目标使用 `Quaternion.LookRotation(-方向)`。
-- 阶段 03 - 四元数 已收尾，当前准备进入阶段 04 - 延迟函数、协同程序。
+- 阶段 03 - 四元数 已收尾。
+- 完成 `24.延迟函数.mp4` 和 `25.延迟函数  练习题.mp4`，新增 `Lesson13` 延迟函数练习。
+- 完成 `26.协同程序1.mp4`、`27.协同程序2.mp4` 和 `28.协同程序  练习题.mp4`，新增 `Lesson14` 计秒器和分帧生成 `100000` 个随机方块练习。
+- 完成 `29.协同程序原理.mp4` 和 `30.协同程序原理  练习题.mp4`，新增 `Lesson15` 手动迭代器版和 `CoroutineMgr` 自定义调度器版。
+- 阶段 04 - 延迟函数、协同程序、协程原理 已收尾。
+- 下一阶段准备进入 31-44p：特殊文件夹、`Resources`、资源卸载、场景异步加载、`LineRenderer`、范围检测和射线检测。
+- 学习节奏计划：明天尽量完成后续全部基础知识点，后天进入 46-68p 小项目实践。
 
 ## 当前项目内容
 
@@ -65,6 +71,14 @@
 - `Assets/Scripts/Lesson/Lesson12_四元数计算/BulletObj.cs`
 - `Assets/Scripts/Lesson/Lesson12_四元数计算/Bullet.prefab`
 - `Assets/Scripts/Lesson/Lesson12_四元数计算/Lesson12.unity`
+- [Assets/Scripts/Lesson/Lesson13_延迟函数/Lesson13.cs](../Assets/Scripts/Lesson/Lesson13_延迟函数/Lesson13.cs)
+- [Assets/Scripts/Lesson/Lesson13_延迟函数/Lesson13.unity](../Assets/Scripts/Lesson/Lesson13_延迟函数/Lesson13.unity)
+- [Assets/Scripts/Lesson/Lesson14_协同程序/Lesson14.cs](../Assets/Scripts/Lesson/Lesson14_协同程序/Lesson14.cs)
+- [Assets/Scripts/Lesson/Lesson14_协同程序/Lesson14.unity](../Assets/Scripts/Lesson/Lesson14_协同程序/Lesson14.unity)
+- [Assets/Scripts/Lesson/Lesson15_协同程序原理/Lesson15.cs](../Assets/Scripts/Lesson/Lesson15_协同程序原理/Lesson15.cs)
+- [Assets/Scripts/Lesson/Lesson15_协同程序原理/CoroutineMgr.cs](../Assets/Scripts/Lesson/Lesson15_协同程序原理/CoroutineMgr.cs)
+- [Assets/Scripts/Lesson/Lesson15_协同程序原理/Lesson15answer.cs](../Assets/Scripts/Lesson/Lesson15_协同程序原理/Lesson15answer.cs)
+- [Assets/Scripts/Lesson/Lesson15_协同程序原理/Lesson15.unity](../Assets/Scripts/Lesson/Lesson15_协同程序原理/Lesson15.unity)
 - `Assets/Materials/Gray.mat`
 - `Packages/manifest.json`
 - `ProjectSettings/`
@@ -73,5 +87,6 @@
 
 ## 下一步
 
-1. 进入延迟函数、协同程序相关课程。
+1. 进入 `31.特殊文件夹.mp4` 到 `44.射线检测  练习题.mp4` 的后续基础知识点。
 2. 每次 push 前先检查学习文档是否跟上代码和场景进度。
+3. 后天准备进入 `46.需求分析.mp4` 到 `68.实践总结.mp4` 的小项目阶段。

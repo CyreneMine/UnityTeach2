@@ -32,10 +32,9 @@ UnityTeach2 是一个 Unity 基础教程学习仓库，用来跟随「[唐老狮
 
 ## 当前状态
 
-- 基础 GitHub 仓库环境已开始搭建。
-- Unity 工程目前保留默认 `Assets/Scenes/SampleScene.unity`。
-- 暂未开始记录具体课程完成情况。
-- 第一阶段建议从 `1.概述.mp4`、`2.Mathf.mp4` 和 `3.Mathf  练习题.mp4` 开始。
+- 已完成 `Mathf`、三角函数、坐标系、向量、点乘、叉乘、插值、四元数、延迟函数、协同程序和协程原理阶段。
+- 当前最新练习停在 `Lesson15_协同程序原理`，包含手动 `IEnumerator.MoveNext()` 版本和自定义 `CoroutineMgr` 调度器版本。
+- 下一步计划先完成 31-44p 的特殊文件夹、`Resources`、场景加载、`LineRenderer`、范围检测和射线检测，再进入 46-68p 小项目实践。
 
 ## 协作原则
 
