@@ -4,8 +4,14 @@ using UnityEngine;
 public class Lesson12 : MonoBehaviour
 {
     public Transform airPlane;
-    public GameObject bullet;
+    private GameObject bullet;
     public float sectorDeg = 60;
+
+    private void Start()
+    {
+        bullet = Resources.Load<GameObject>("Bullet");
+    }
+
     private void Update()
     {
         //单发
