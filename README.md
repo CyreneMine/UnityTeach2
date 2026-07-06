@@ -33,8 +33,9 @@ UnityTeach2 是一个 Unity 基础教程学习仓库，用来跟随「[唐老狮
 ## 当前状态
 
 - 已完成 `Mathf`、三角函数、坐标系、向量、点乘、叉乘、插值、四元数、延迟函数、协同程序和协程原理阶段。
-- 当前最新练习停在 `Lesson15_协同程序原理`，包含手动 `IEnumerator.MoveNext()` 版本和自定义 `CoroutineMgr` 调度器版本。
-- 下一步计划先完成 31-44p 的特殊文件夹、`Resources`、场景加载、`LineRenderer`、范围检测和射线检测，再进入 46-68p 小项目实践。
+- 当前正在阶段 05：已完成特殊文件夹创建、`Resources` 同步加载练习和 `Resources` 异步加载练习。
+- 最新练习包含 `Lesson12` 子弹预制体通过 `Resources.Load` 动态加载，以及 `Lesson18_异步加载` 中的 `ResourcesMgr` 回调/协程两种异步加载写法。
+- 下一步继续资源卸载和场景异步加载，再进入 `LineRenderer`、范围检测、射线检测和 46-68p 小项目实践。
 
 ## 协作原则
 

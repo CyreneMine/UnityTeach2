@@ -1,15 +1,15 @@
 # UnityTeach2 学习进度
 
-更新时间：2026-07-05
+更新时间：2026-07-06
 
 ## 总览
 
 - 课程名称：「[唐老狮] Unity 四部曲 - 基础」
 - 本地视频目录：`F:\1aUnity教程\6.［唐老狮]【Unity四部曲_基础】`
 - 已识别视频：67 个
-- 当前进度：阶段 04 - 延迟函数、协同程序、协程原理 已收尾
+- 当前进度：阶段 05 - 特殊文件夹、`Resources` 同步/异步加载 学习中
 - 当前阶段：阶段 05 - 特殊文件夹、`Resources`、场景异步加载
-- 下一步：明天尽量学完 31-44p 的后续基础知识点；后天进入 46-68p 小项目实践
+- 下一步：继续 `36..Resources资源卸载.mp4`、`37.场景异步加载.mp4` 和 `38.场景异步加载  练习题.mp4`
 
 备注：课程编号 `45` 是知识点总结，当前不作为主线练习进度的关键节点。
 
@@ -21,7 +21,7 @@
 | 02 | 坐标系、向量、点乘、叉乘、插值 | 已完成 | 能解释方向/长度/角度含义，并用场景或调试线验证 |
 | 03 | 四元数 | 已完成 | 能说明欧拉角和四元数差异，验证旋转结果 |
 | 04 | 延迟函数、协同程序、协程原理 | 已完成 | 能说明生命周期、停止条件和时间缩放影响 |
-| 05 | 特殊文件夹、`Resources`、场景异步加载 | 未开始 | 能验证路径、异步状态、卸载和 Build Settings 边界 |
+| 05 | 特殊文件夹、`Resources`、场景异步加载 | 学习中 | 能验证路径、异步状态、卸载和 Build Settings 边界 |
 | 06 | `LineRenderer`、范围检测、射线检测 | 未开始 | 能验证坐标、层级、碰撞体和 Debug 可视化 |
 | 07 | 综合实践 UI 与数据准备 | 未开始 | 能验证面板引用、数据读写、交互状态和分辨率适配 |
 | 08 | 综合实践 gameplay 逻辑 | 未开始 | 能验证玩家、子弹、开火点、状态切换和重复进入 |
@@ -46,6 +46,19 @@
 ```
 
 ## 历史记录
+
+### 2026-07-06 - 特殊文件夹与 Resources 同步/异步加载
+
+- 完成 `31.特殊文件夹.mp4`，在工程中创建本节需要用到的特殊文件夹：`Assets/Editor`、`Assets/Plugins`、`Assets/Resources`、`Assets/StreamingAssets`。
+- 检查并修正 `Assets/Resource` 单数命名问题，最终改为 Unity 可识别的 `Assets/Resources`。
+- 完成 `32.Resources资源同步加载.mp4` 和 `33.Resources资源同步加载  练习题.mp4`，复用 `Lesson12_四元数计算` 的发射子弹练习，把 `Bullet.prefab` 移入 `Assets/Scripts/Lesson/Lesson12_四元数计算/Resources/`，并改用 `Resources.Load<GameObject>("Bullet")` 动态加载后实例化。
+- 明确 `Resources.Load` 路径规则：路径相对任意 `Resources` 文件夹，不带扩展名；`Resources` 文件夹可以嵌套在 `Assets` 下的子目录里。
+- 完成 `34.Resources资源异步加载.mp4` 和 `35.Resources资源异步加载  练习题.mp4`，新增 `Assets/Scripts/Lesson/Lesson18_异步加载/ResourcesMgr.cs`、`Lesson18.cs`、`Lesson18.unity` 和 `Resources/BeLovedCyrene.jpg`。
+- `ResourcesMgr` 当前提供两种异步加载方式：基于 `ResourceRequest.completed` 的回调版，以及 `IEnumerator` 协程等待版。
+- 检查确认 `BeLovedCyrene.jpg` 位于 `Resources` 文件夹下，并在 `.meta` 中按 `Sprite` 类型导入；`Lesson18.unity` 中 `Lesson18.img` 已绑定到场景 `Image` 组件。
+- 记录边界：`Lesson18.Start()` 当前同时调用了两种异步加载方式，会对同一张图赋值两次；这是为了对比两种写法，后续正式使用时保留一种即可。
+- 新增笔记：`Notes/Lesson31-35-ResourcesLoading.md`。
+- 阶段 05 仍在学习中，下一步进入资源卸载和场景异步加载。
 
 ### 2026-07-05 - 延迟函数、协同程序和协程原理阶段收尾
 

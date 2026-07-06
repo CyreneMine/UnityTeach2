@@ -1,6 +1,6 @@
 # UnityTeach2 当前状态
 
-更新时间：2026-07-05
+更新时间：2026-07-06
 
 ## 项目快照
 
@@ -44,13 +44,20 @@
 - 完成 `26.协同程序1.mp4`、`27.协同程序2.mp4` 和 `28.协同程序  练习题.mp4`，新增 `Lesson14` 计秒器和分帧生成 `100000` 个随机方块练习。
 - 完成 `29.协同程序原理.mp4` 和 `30.协同程序原理  练习题.mp4`，新增 `Lesson15` 手动迭代器版和 `CoroutineMgr` 自定义调度器版。
 - 阶段 04 - 延迟函数、协同程序、协程原理 已收尾。
-- 下一阶段准备进入 31-44p：特殊文件夹、`Resources`、资源卸载、场景异步加载、`LineRenderer`、范围检测和射线检测。
-- 学习节奏计划：明天尽量完成后续全部基础知识点，后天进入 46-68p 小项目实践。
+- 完成 `31.特殊文件夹.mp4`，当前已创建 `Assets/Editor`、`Assets/Plugins`、`Assets/Resources` 和 `Assets/StreamingAssets`。
+- 完成 `32.Resources资源同步加载.mp4` 和 `33.Resources资源同步加载  练习题.mp4`，`Lesson12` 的子弹预制体已移入 `Resources` 文件夹，并改为 `Resources.Load<GameObject>("Bullet")` 加载后实例化。
+- 完成 `34.Resources资源异步加载.mp4` 和 `35.Resources资源异步加载  练习题.mp4`，新增 `Lesson18_异步加载` 场景、测试脚本、`ResourcesMgr` 和测试图片资源。
+- 阶段 05 - 特殊文件夹、`Resources`、场景异步加载 当前学习中。
+- 下一步进入 `36..Resources资源卸载.mp4`、`37.场景异步加载.mp4` 和 `38.场景异步加载  练习题.mp4`。
 
 ## 当前项目内容
 
 - `Assets/Scenes/SampleScene.unity`
 - `Assets/InputSystem_Actions.inputactions`
+- `Assets/Editor`
+- `Assets/Plugins`
+- `Assets/Resources`
+- `Assets/StreamingAssets`
 - `Assets/Scripts/Lesson/Lesson1_Mathf/Lesson1.cs`
 - `Assets/Scripts/Lesson/Lesson1_Mathf/Lesson1.unity`
 - `Assets/Scripts/Lesson/Lesson2_三角函数/Lesson2.cs`
@@ -69,7 +76,7 @@
 - `Assets/Scripts/Lesson/Lesson12_四元数计算/Lesson12.cs`
 - `Assets/Scripts/Lesson/Lesson12_四元数计算/CameraFollow.cs`
 - `Assets/Scripts/Lesson/Lesson12_四元数计算/BulletObj.cs`
-- `Assets/Scripts/Lesson/Lesson12_四元数计算/Bullet.prefab`
+- `Assets/Scripts/Lesson/Lesson12_四元数计算/Resources/Bullet.prefab`
 - `Assets/Scripts/Lesson/Lesson12_四元数计算/Lesson12.unity`
 - [Assets/Scripts/Lesson/Lesson13_延迟函数/Lesson13.cs](../Assets/Scripts/Lesson/Lesson13_延迟函数/Lesson13.cs)
 - [Assets/Scripts/Lesson/Lesson13_延迟函数/Lesson13.unity](../Assets/Scripts/Lesson/Lesson13_延迟函数/Lesson13.unity)
@@ -79,6 +86,10 @@
 - [Assets/Scripts/Lesson/Lesson15_协同程序原理/CoroutineMgr.cs](../Assets/Scripts/Lesson/Lesson15_协同程序原理/CoroutineMgr.cs)
 - [Assets/Scripts/Lesson/Lesson15_协同程序原理/Lesson15answer.cs](../Assets/Scripts/Lesson/Lesson15_协同程序原理/Lesson15answer.cs)
 - [Assets/Scripts/Lesson/Lesson15_协同程序原理/Lesson15.unity](../Assets/Scripts/Lesson/Lesson15_协同程序原理/Lesson15.unity)
+- [Assets/Scripts/Lesson/Lesson18_异步加载/ResourcesMgr.cs](../Assets/Scripts/Lesson/Lesson18_异步加载/ResourcesMgr.cs)
+- [Assets/Scripts/Lesson/Lesson18_异步加载/Lesson18.cs](../Assets/Scripts/Lesson/Lesson18_异步加载/Lesson18.cs)
+- [Assets/Scripts/Lesson/Lesson18_异步加载/Lesson18.unity](../Assets/Scripts/Lesson/Lesson18_异步加载/Lesson18.unity)
+- [Assets/Scripts/Lesson/Lesson18_异步加载/Resources/BeLovedCyrene.jpg](../Assets/Scripts/Lesson/Lesson18_异步加载/Resources/BeLovedCyrene.jpg)
 - `Assets/Materials/Gray.mat`
 - `Packages/manifest.json`
 - `ProjectSettings/`
@@ -87,6 +98,6 @@
 
 ## 下一步
 
-1. 进入 `31.特殊文件夹.mp4` 到 `44.射线检测  练习题.mp4` 的后续基础知识点。
+1. 进入 `36..Resources资源卸载.mp4`、`37.场景异步加载.mp4` 和 `38.场景异步加载  练习题.mp4`。
 2. 每次 push 前先检查学习文档是否跟上代码和场景进度。
-3. 后天准备进入 `46.需求分析.mp4` 到 `68.实践总结.mp4` 的小项目阶段。
+3. 完成 31-44p 后再进入 `46.需求分析.mp4` 到 `68.实践总结.mp4` 的小项目阶段。
