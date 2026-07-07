@@ -1,15 +1,15 @@
 # UnityTeach2 学习进度
 
-更新时间：2026-07-06
+更新时间：2026-07-07
 
 ## 总览
 
 - 课程名称：「[唐老狮] Unity 四部曲 - 基础」
 - 本地视频目录：`F:\1aUnity教程\6.［唐老狮]【Unity四部曲_基础】`
 - 已识别视频：67 个
-- 当前进度：阶段 05 - 特殊文件夹、`Resources` 同步/异步加载 学习中
+- 当前进度：阶段 05 - 场景异步加载练习已完成，资源卸载边界待复盘
 - 当前阶段：阶段 05 - 特殊文件夹、`Resources`、场景异步加载
-- 下一步：继续 `36..Resources资源卸载.mp4`、`37.场景异步加载.mp4` 和 `38.场景异步加载  练习题.mp4`
+- 下一步：进入 `39.LineRenderer.mp4`；资源卸载相关边界后续继续复盘验证
 
 备注：课程编号 `45` 是知识点总结，当前不作为主线练习进度的关键节点。
 
@@ -46,6 +46,19 @@
 ```
 
 ## 历史记录
+
+### 2026-07-07 - 场景异步加载练习
+
+- 完成 `37.场景异步加载.mp4` 和 `38.场景异步加载  练习题.mp4`：写一个简单场景管理器，对外提供统一方法用于场景异步切换，并在异步切换结束后执行外部传入的委托逻辑。
+- 新增练习文件：`Assets/Scripts/Lesson/Lesson20_场景异步加载/SceneMgr.cs`、`Assets/Scripts/Lesson/Lesson20_场景异步加载/Lesson20.cs`、`Assets/Scripts/Lesson/Lesson20_场景异步加载/Lesson20_1.unity`、`Assets/Scripts/Lesson/Lesson20_场景异步加载/Lesson20_2.unity`。
+- `SceneMgr` 使用普通 C# 单例封装 `SceneManager.LoadSceneAsync(sceneName)`，并在 `AsyncOperation.completed` 中调用外部传入的 `UnityAction`。
+- `Lesson20` 在 `Start()` 中调用 `SceneMgr.Instance.LoadScene("Lesson20_2", callback)`，用于从 `Lesson20_1` 异步切换到 `Lesson20_2`，并在完成时打印提示。
+- `ProjectSettings/EditorBuildSettings.asset` 已加入 `Lesson20_1.unity` 和 `Lesson20_2.unity`，满足场景异步加载需要进入 Build Settings 的要求。
+- 检查发现：当前 `SceneMgr.cs` 的 Git 暂存区里还是早期空类版本，工作区里才是最终实现；后续提交时必须确认暂存的是最终版，避免只提交空类。
+- 记录边界：`SceneMgr.LoadScene` 当前没有空回调保护、没有进度回调、没有 `allowSceneActivation` 控制；本题目标是理解异步切换和完成回调，当前实现可接受。
+- `36..Resources资源卸载.mp4` 本次没有看到单独代码验证文件，先记录为资源卸载边界待后续复盘，不强行标记为完整验证。
+- 新增笔记：`Notes/Lesson37-38-SceneAsyncLoading.md`。
+- 阶段 05 的特殊文件夹、`Resources` 加载和场景异步切换主线已推进到场景加载；下一步进入 `LineRenderer`。
 
 ### 2026-07-06 - 特殊文件夹与 Resources 同步/异步加载
 

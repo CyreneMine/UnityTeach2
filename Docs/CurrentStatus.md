@@ -1,6 +1,6 @@
 # UnityTeach2 当前状态
 
-更新时间：2026-07-06
+更新时间：2026-07-07
 
 ## 项目快照
 
@@ -47,8 +47,11 @@
 - 完成 `31.特殊文件夹.mp4`，当前已创建 `Assets/Editor`、`Assets/Plugins`、`Assets/Resources` 和 `Assets/StreamingAssets`。
 - 完成 `32.Resources资源同步加载.mp4` 和 `33.Resources资源同步加载  练习题.mp4`，`Lesson12` 的子弹预制体已移入 `Resources` 文件夹，并改为 `Resources.Load<GameObject>("Bullet")` 加载后实例化。
 - 完成 `34.Resources资源异步加载.mp4` 和 `35.Resources资源异步加载  练习题.mp4`，新增 `Lesson18_异步加载` 场景、测试脚本、`ResourcesMgr` 和测试图片资源。
-- 阶段 05 - 特殊文件夹、`Resources`、场景异步加载 当前学习中。
-- 下一步进入 `36..Resources资源卸载.mp4`、`37.场景异步加载.mp4` 和 `38.场景异步加载  练习题.mp4`。
+- 完成 `37.场景异步加载.mp4` 和 `38.场景异步加载  练习题.mp4`，新增 `Lesson20_场景异步加载` 场景、测试脚本和 `SceneMgr`。
+- `SceneMgr` 当前封装 `SceneManager.LoadSceneAsync`，并在 `AsyncOperation.completed` 中调用外部传入的回调。
+- `ProjectSettings/EditorBuildSettings.asset` 已加入 `Lesson20_1.unity` 和 `Lesson20_2.unity`，用于验证场景异步加载。
+- 阶段 05 - 特殊文件夹、`Resources`、场景异步加载 当前主线已推进到场景异步加载；资源卸载边界仍待后续复盘验证。
+- 下一步进入 `39.LineRenderer.mp4`。
 
 ## 当前项目内容
 
@@ -90,6 +93,10 @@
 - [Assets/Scripts/Lesson/Lesson18_异步加载/Lesson18.cs](../Assets/Scripts/Lesson/Lesson18_异步加载/Lesson18.cs)
 - [Assets/Scripts/Lesson/Lesson18_异步加载/Lesson18.unity](../Assets/Scripts/Lesson/Lesson18_异步加载/Lesson18.unity)
 - [Assets/Scripts/Lesson/Lesson18_异步加载/Resources/BeLovedCyrene.jpg](../Assets/Scripts/Lesson/Lesson18_异步加载/Resources/BeLovedCyrene.jpg)
+- [Assets/Scripts/Lesson/Lesson20_场景异步加载/SceneMgr.cs](../Assets/Scripts/Lesson/Lesson20_场景异步加载/SceneMgr.cs)
+- [Assets/Scripts/Lesson/Lesson20_场景异步加载/Lesson20.cs](../Assets/Scripts/Lesson/Lesson20_场景异步加载/Lesson20.cs)
+- [Assets/Scripts/Lesson/Lesson20_场景异步加载/Lesson20_1.unity](../Assets/Scripts/Lesson/Lesson20_场景异步加载/Lesson20_1.unity)
+- [Assets/Scripts/Lesson/Lesson20_场景异步加载/Lesson20_2.unity](../Assets/Scripts/Lesson/Lesson20_场景异步加载/Lesson20_2.unity)
 - `Assets/Materials/Gray.mat`
 - `Packages/manifest.json`
 - `ProjectSettings/`
@@ -98,6 +105,7 @@
 
 ## 下一步
 
-1. 进入 `36..Resources资源卸载.mp4`、`37.场景异步加载.mp4` 和 `38.场景异步加载  练习题.mp4`。
+1. 进入 `39.LineRenderer.mp4`。
 2. 每次 push 前先检查学习文档是否跟上代码和场景进度。
-3. 完成 31-44p 后再进入 `46.需求分析.mp4` 到 `68.实践总结.mp4` 的小项目阶段。
+3. 资源卸载相关边界后续继续复盘验证。
+4. 完成 31-44p 后再进入 `46.需求分析.mp4` 到 `68.实践总结.mp4` 的小项目阶段。

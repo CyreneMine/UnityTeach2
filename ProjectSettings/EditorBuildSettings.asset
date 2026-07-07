@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: "Assets/Scripts/Lesson/Lesson20_\u573A\u666F\u5F02\u6B65\u52A0\u8F7D/Lesson20_1.unity"
+    guid: d95535bc10526df49818eb83f5fa3075
+  - enabled: 1
+    path: "Assets/Scripts/Lesson/Lesson20_\u573A\u666F\u5F02\u6B65\u52A0\u8F7D/Lesson20_2.unity"
+    guid: 9ecbb8ac7469b864fb9c1eb2bb47fed7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0
