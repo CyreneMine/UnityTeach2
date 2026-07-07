@@ -51,7 +51,11 @@
 - `SceneMgr` 当前封装 `SceneManager.LoadSceneAsync`，并在 `AsyncOperation.completed` 中调用外部传入的回调。
 - `ProjectSettings/EditorBuildSettings.asset` 已加入 `Lesson20_1.unity` 和 `Lesson20_2.unity`，用于验证场景异步加载。
 - 阶段 05 - 特殊文件夹、`Resources`、场景异步加载 当前主线已推进到场景异步加载；资源卸载边界仍待后续复盘验证。
-- 下一步进入 `39.LineRenderer.mp4`。
+- 完成 `39.LineRenderer.mp4` 和 `40.LineRenderer  练习题.mp4`，新增 `Lesson21_LineRender` 场景和脚本。
+- `Lesson21` 当前包含 `DrawSphere(center, radius)` 画圆方法，以及按住鼠标时用 `LineRenderer` 绘制鼠标移动轨迹的逻辑。
+- 已归档 `ScreenToWorldPoint` 理解补充：鼠标屏幕坐标转世界坐标前需要给 `Input.mousePosition.z` 设置“离摄像机多远”的深度。
+- 阶段 06 - `LineRenderer`、范围检测、射线检测 已开始。
+- 下一步进入 `41.范围检测.mp4`。
 
 ## 当前项目内容
 
@@ -97,6 +101,8 @@
 - [Assets/Scripts/Lesson/Lesson20_场景异步加载/Lesson20.cs](../Assets/Scripts/Lesson/Lesson20_场景异步加载/Lesson20.cs)
 - [Assets/Scripts/Lesson/Lesson20_场景异步加载/Lesson20_1.unity](../Assets/Scripts/Lesson/Lesson20_场景异步加载/Lesson20_1.unity)
 - [Assets/Scripts/Lesson/Lesson20_场景异步加载/Lesson20_2.unity](../Assets/Scripts/Lesson/Lesson20_场景异步加载/Lesson20_2.unity)
+- [Assets/Scripts/Lesson/Lesson21_LineRender/Lesson21.cs](../Assets/Scripts/Lesson/Lesson21_LineRender/Lesson21.cs)
+- [Assets/Scripts/Lesson/Lesson21_LineRender/Lesson21.unity](../Assets/Scripts/Lesson/Lesson21_LineRender/Lesson21.unity)
 - `Assets/Materials/Gray.mat`
 - `Packages/manifest.json`
 - `ProjectSettings/`
@@ -105,7 +111,7 @@
 
 ## 下一步
 
-1. 进入 `39.LineRenderer.mp4`。
+1. 进入 `41.范围检测.mp4`。
 2. 每次 push 前先检查学习文档是否跟上代码和场景进度。
 3. 资源卸载相关边界后续继续复盘验证。
 4. 完成 31-44p 后再进入 `46.需求分析.mp4` 到 `68.实践总结.mp4` 的小项目阶段。

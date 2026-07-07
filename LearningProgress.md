@@ -7,9 +7,9 @@
 - 课程名称：「[唐老狮] Unity 四部曲 - 基础」
 - 本地视频目录：`F:\1aUnity教程\6.［唐老狮]【Unity四部曲_基础】`
 - 已识别视频：67 个
-- 当前进度：阶段 05 - 场景异步加载练习已完成，资源卸载边界待复盘
-- 当前阶段：阶段 05 - 特殊文件夹、`Resources`、场景异步加载
-- 下一步：进入 `39.LineRenderer.mp4`；资源卸载相关边界后续继续复盘验证
+- 当前进度：阶段 06 - `LineRenderer` 练习已完成
+- 当前阶段：阶段 06 - `LineRenderer`、范围检测、射线检测
+- 下一步：进入 `41.范围检测.mp4`
 
 备注：课程编号 `45` 是知识点总结，当前不作为主线练习进度的关键节点。
 
@@ -21,8 +21,8 @@
 | 02 | 坐标系、向量、点乘、叉乘、插值 | 已完成 | 能解释方向/长度/角度含义，并用场景或调试线验证 |
 | 03 | 四元数 | 已完成 | 能说明欧拉角和四元数差异，验证旋转结果 |
 | 04 | 延迟函数、协同程序、协程原理 | 已完成 | 能说明生命周期、停止条件和时间缩放影响 |
-| 05 | 特殊文件夹、`Resources`、场景异步加载 | 学习中 | 能验证路径、异步状态、卸载和 Build Settings 边界 |
-| 06 | `LineRenderer`、范围检测、射线检测 | 未开始 | 能验证坐标、层级、碰撞体和 Debug 可视化 |
+| 05 | 特殊文件夹、`Resources`、场景异步加载 | 待复盘 | 能验证路径、异步状态、卸载和 Build Settings 边界 |
+| 06 | `LineRenderer`、范围检测、射线检测 | 学习中 | 能验证坐标、层级、碰撞体和 Debug 可视化 |
 | 07 | 综合实践 UI 与数据准备 | 未开始 | 能验证面板引用、数据读写、交互状态和分辨率适配 |
 | 08 | 综合实践 gameplay 逻辑 | 未开始 | 能验证玩家、子弹、开火点、状态切换和重复进入 |
 | 09 | 实践总结、仓库复盘、可展示成果 | 未开始 | 完成最终复盘、GitHub 文档和可选 Release |
@@ -46,6 +46,19 @@
 ```
 
 ## 历史记录
+
+### 2026-07-07 - LineRenderer 练习
+
+- 完成 `39.LineRenderer.mp4` 和 `40.LineRenderer  练习题.mp4`：用 `LineRenderer` 写一个画圆方法，并实现按住鼠标时绘制鼠标移动轨迹。
+- 新增练习文件：`Assets/Scripts/Lesson/Lesson21_LineRender/Lesson21.cs`、`Assets/Scripts/Lesson/Lesson21_LineRender/Lesson21.unity`。
+- `DrawSphere(center, radius)` 当前通过 `Quaternion.AngleAxis(i, Vector3.up) * Vector3.forward * radius` 计算圆上一圈点，并设置 `LineRenderer.loop = true`、`positionCount = 360`。
+- 鼠标轨迹部分在 `Start()` 中动态添加第二个 `LineRenderer`，按下鼠标后每帧增加一个点，并使用 `Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 10)` 将鼠标屏幕坐标转成世界坐标。
+- 根据 `ScreenToWorldPoint_MousePosition_理解总结.md` 补充复盘：`Input.mousePosition.z` 表示离摄像机的深度，不是世界 z；应在调用 `ScreenToWorldPoint` 前设置深度，转换后再加 `Vector3.forward * 10` 只是沿世界 Z 轴偏移。
+- 场景中 `Lesson21` 对象已挂载 `Lesson21` 脚本，`center = (3, 0, 0)`、`radius = 10`；`Main Camera` 带有 `MainCamera` 标签。
+- 检查发现：画圆方法目前在 `Start()` 中被注释，没有自动运行；如果要验证第一题，需要临时调用 `DrawSphere(center, radius)` 或通过其他测试入口调用。
+- 检查发现：`DrawSphere` 在对象已有 `LineRenderer` 时没有把组件赋值给 `lineRenderer` 字段，后续如果在已存在组件的对象上调用，可能出现空引用；当前第二题轨迹逻辑不受影响。
+- 新增笔记：`Notes/Lesson39-40-LineRenderer.md`。
+- 阶段 06 已进入，下一步是范围检测。
 
 ### 2026-07-07 - 场景异步加载练习
 

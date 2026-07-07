@@ -60,7 +60,7 @@ SceneMgr.Instance.LoadScene("Lesson20_2", (() =>
 | 通过 | `SceneMgr.cs` | 使用 `SceneManager.LoadSceneAsync` 并监听 `completed` | 符合异步切换和完成回调目标 | 已完成 |
 | 通过 | `Lesson20.cs` | 从 `Lesson20_1` 调用 `SceneMgr.Instance.LoadScene("Lesson20_2", callback)` | 可以触发切换到第二个场景 | 已完成 |
 | 通过 | `EditorBuildSettings.asset` | `Lesson20_1.unity` 和 `Lesson20_2.unity` 已加入 Build Settings | 满足场景加载配置要求 | 已完成 |
-| P2 | Git 暂存区 | `SceneMgr.cs` 暂存区中还是早期空类版本，工作区中才是最终实现 | 如果只提交暂存区，会把空类提交进去，漏掉真正实现 | 后续 commit 前重新检查 staged diff 或重新暂存最终文件 |
+| 已修正 | Git 提交 | 之前检查时 `SceneMgr.cs` 暂存区还是早期空类版本 | 如果只提交暂存区，会漏掉真正实现 | 后续提交 `c7bfe1f` 已包含最终版 `SceneMgr.cs` |
 | P3 | `SceneMgr.cs` | 参数名 `resName` 更像资源名，不像场景名 | 不影响运行，但读代码时容易和 `Resources` 加载混淆 | 后续可改成 `sceneName` |
 | P3 | `SceneMgr.cs` | 没有判断 `callback` 是否为空 | 外部传 `null` 时会报错 | 学习阶段可接受，正式工具类再补 |
 | P3 | `SceneMgr.cs` | 没有暴露加载进度、`allowSceneActivation` 或加载模式 | 只能做最基础的异步切换完成回调 | 符合当前练习范围 |
