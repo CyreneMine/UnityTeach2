@@ -1,6 +1,6 @@
 # UnityTeach2 当前状态
 
-更新时间：2026-07-07
+更新时间：2026-07-08
 
 ## 项目快照
 
@@ -54,8 +54,15 @@
 - 完成 `39.LineRenderer.mp4` 和 `40.LineRenderer  练习题.mp4`，新增 `Lesson21_LineRender` 场景和脚本。
 - `Lesson21` 当前包含 `DrawSphere(center, radius)` 画圆方法，以及按住鼠标时用 `LineRenderer` 绘制鼠标移动轨迹的逻辑。
 - 已归档 `ScreenToWorldPoint` 理解补充：鼠标屏幕坐标转世界坐标前需要给 `Input.mousePosition.z` 设置“离摄像机多远”的深度。
-- 阶段 06 - `LineRenderer`、范围检测、射线检测 已开始。
-- 下一步进入 `41.范围检测.mp4`。
+- 完成 `41.范围检测.mp4` 和 `42.范围检测  练习题.mp4`，新增 `Lesson22_范围检测` 场景和脚本。
+- `Lesson22` 当前使用 `WASD` 控制物体移动和旋转，并通过 `J/K/L` 分别练习盒形、胶囊和球形范围检测。
+- 完成 `43.射线检测.mp4` 和 `44.射线检测  练习题.mp4`，新增 `Lesson23_射线检测` 场景和脚本。
+- `Lesson23` 当前用鼠标射线实现点击墙面生成命中特效和弹孔，以及选中物体后在平面上拖动。
+- `ProjectSettings/TagManager.asset` 已新增 `Monster` 和 `Player` 层，用于范围检测和射线检测过滤。
+- 新增命中特效资源：`Assets/Resources/Effect/HitEff.prefab`、`Assets/Resources/Effect/DDD.prefab`，以及 `Assets/ArtRes/BulletEff/` 下的特效资源。
+- 阶段 06 - `LineRenderer`、范围检测、射线检测 已收尾。
+- 基础知识主线 1-44p 已结束；`45` 是知识点总结，不作为新的主线练习节点。
+- 下一步进入 `46.需求分析.mp4`，开始 46-68p 小项目实践。
 
 ## 当前项目内容
 
@@ -103,15 +110,22 @@
 - [Assets/Scripts/Lesson/Lesson20_场景异步加载/Lesson20_2.unity](../Assets/Scripts/Lesson/Lesson20_场景异步加载/Lesson20_2.unity)
 - [Assets/Scripts/Lesson/Lesson21_LineRender/Lesson21.cs](../Assets/Scripts/Lesson/Lesson21_LineRender/Lesson21.cs)
 - [Assets/Scripts/Lesson/Lesson21_LineRender/Lesson21.unity](../Assets/Scripts/Lesson/Lesson21_LineRender/Lesson21.unity)
+- [Assets/Scripts/Lesson/Lesson22_范围检测/Lesson22.cs](../Assets/Scripts/Lesson/Lesson22_范围检测/Lesson22.cs)
+- [Assets/Scripts/Lesson/Lesson22_范围检测/Lesson22.unity](../Assets/Scripts/Lesson/Lesson22_范围检测/Lesson22.unity)
+- [Assets/Scripts/Lesson/Lesson23_射线检测/Lesson23.cs](../Assets/Scripts/Lesson/Lesson23_射线检测/Lesson23.cs)
+- [Assets/Scripts/Lesson/Lesson23_射线检测/Lesson23.unity](../Assets/Scripts/Lesson/Lesson23_射线检测/Lesson23.unity)
+- [Assets/Resources/Effect/HitEff.prefab](../Assets/Resources/Effect/HitEff.prefab)
+- [Assets/Resources/Effect/DDD.prefab](../Assets/Resources/Effect/DDD.prefab)
+- [Assets/ArtRes/BulletEff](../Assets/ArtRes/BulletEff)
 - `Assets/Materials/Gray.mat`
 - `Packages/manifest.json`
 - `ProjectSettings/`
 
-当前已开始课程脚本和场景练习。后续每一课的代码、场景、Prefab 或资源变更都应在 `LearningProgress.md` 或 `Notes/` 中记录。
+当前基础知识主线已结束，后续重点转入综合实践项目。实践阶段的代码、场景、Prefab、UI、数据和资源变更都应在 `LearningProgress.md` 或 `Notes/` 中记录。
 
 ## 下一步
 
-1. 进入 `41.范围检测.mp4`。
-2. 每次 push 前先检查学习文档是否跟上代码和场景进度。
-3. 资源卸载相关边界后续继续复盘验证。
-4. 完成 31-44p 后再进入 `46.需求分析.mp4` 到 `68.实践总结.mp4` 的小项目阶段。
+1. 进入 `46.需求分析.mp4`，开始 46-68p 小项目实践。
+2. 实践前先明确场景、UI、资源和脚本目录规划。
+3. 每次 push 前先检查学习文档是否跟上代码和场景进度。
+4. 资源卸载、特效朝向、输入优先级等基础阶段边界，后续在实践项目中继续复查。
