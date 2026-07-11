@@ -11,11 +11,16 @@
 
 ## 已完成
 
+- 确认综合实践技术路线：原教程使用 `NGUI + XML`，本项目改用 `UGUI + JSON`，保留教程的功能目标，但不照搬旧 UI 框架和 XML 数据实现。
 - 进入 46-68p 综合实践，完成开始场景的开始面板、设置面板和排行榜面板基础逻辑。
 - 新增 `BeginScene.unity`、通用 `BasePanel<T>` 面板基类、开始场景 UI 脚本、设置与排行榜数据结构，以及对应 UI Prefab 和字体资源。
 - 设置面板已能读取和保存音乐/音效开关与音量数据；排行榜面板已能读取数据并动态生成排行榜条目。
 - 修复排行榜条目实例化后的异常缩放：将 `SetParent(svList.content)` 改为 `SetParent(svList.content, false)`，避免保留世界变换造成局部缩放和位置异常。
-- 当前三个面板只完成基础逻辑；开始游戏、游戏结果写入排行榜、完整声音控制等功能需要在后续游戏场景中接入。
+- 排行榜新条目已加入复用列表，重复打开时可以更新已有条目，不再重复实例化同一批内容。
+- 新增选角面板、角色数据结构和五架飞机 Resources Prefab，实现左右切换、属性显示、鼠标拖动旋转、关闭返回和进入 `GameScene`。
+- `BeginScene` 与 `GameScene` 已加入 Build Settings；Unity 日志确认当前脚本程序集成功重载并加载过 `GameScene`。
+- 开始场景当前基本完成；游戏结果写入排行榜、完整声音控制和 gameplay 仍需在后续 GameScene 中接入。
+- 已知问题：右箭头边界条件使最后一架飞机无法选中；仓库缺少初始 `role.json`，新环境没有本机持久化数据时角色列表为空。
 
 - 确认 Unity 工程存在。
 - 确认当前项目未包含已有 `AGENTS.md`、`README.md` 或 `LearningProgress.md`。
@@ -78,8 +83,12 @@
 - [Assets/Scripts/UI/BeginScene/SettingPanel.cs](../Assets/Scripts/UI/BeginScene/SettingPanel.cs)
 - [Assets/Scripts/UI/BeginScene/RankPanel.cs](../Assets/Scripts/UI/BeginScene/RankPanel.cs)
 - [Assets/Scripts/UI/BeginScene/RankItem.cs](../Assets/Scripts/UI/BeginScene/RankItem.cs)
+- [Assets/Scripts/UI/BeginScene/ChoosePanel.cs](../Assets/Scripts/UI/BeginScene/ChoosePanel.cs)
 - [Assets/Scripts/Data/GameDataMgr.cs](../Assets/Scripts/Data/GameDataMgr.cs)
+- [Assets/Scripts/Data/RoleData.cs](../Assets/Scripts/Data/RoleData.cs)
 - [Assets/Resources/UI/RankItem.prefab](../Assets/Resources/UI/RankItem.prefab)
+- [Assets/Resources/Airplane](../Assets/Resources/Airplane)
+- [Assets/Scenes/GameScene.unity](../Assets/Scenes/GameScene.unity)
 - `Assets/InputSystem_Actions.inputactions`
 - `Assets/Editor`
 - `Assets/Plugins`
@@ -138,8 +147,8 @@
 
 ## 下一步
 
-1. 继续制作综合实践后续游戏场景和 UI。
-2. 将开始按钮接入正式场景切换，将游戏结果接入排行榜数据保存。
-3. 补齐声音播放系统与设置面板数据的实际联动。
-4. 复核排行榜多次打开时的条目复用，避免重复实例化。
+1. 修正选角右箭头的最后一个角色边界。
+2. 为仓库补充可复现的初始角色 JSON 数据，避免只依赖本机 `persistentDataPath`。
+3. 进入 `GameScene` 制作 gameplay，并将游戏结果接入排行榜数据保存。
+4. 补齐声音播放系统与设置面板数据的实际联动。
 5. 每次 push 前先检查学习文档是否跟上代码和场景进度。

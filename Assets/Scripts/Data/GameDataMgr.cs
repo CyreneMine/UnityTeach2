@@ -9,9 +9,12 @@ public class GameDataMgr
     {
         musicData = JsonMgr.Instance.LoadData<MusicData>("music");
         rankData = JsonMgr.Instance.LoadData<RankData>("rank");
+        roleData = JsonMgr.Instance.LoadData<RoleData>("role");
     }
     public MusicData musicData;
     public RankData rankData;
+    public RoleData roleData;
+    public int nowSelHeroIndex = 0;
 
     #region 音频相关
 
@@ -63,5 +66,13 @@ public class GameDataMgr
     }
 
     #endregion
-    
+
+    #region 玩家数据相关
+
+    public RoleInfo GetNowHeroData()
+    {
+        return roleData.list[nowSelHeroIndex];
+    }
+
+    #endregion
 }

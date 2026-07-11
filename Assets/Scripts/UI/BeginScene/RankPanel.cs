@@ -29,10 +29,10 @@ public class RankPanel : BasePanel<RankPanel>
             }
             else
             {
-                GameObject obj = Instantiate(Resources.Load<GameObject>("UI/RankItem"));
-                obj.transform.SetParent(svList.content,false);
+                GameObject obj = Instantiate(Resources.Load<GameObject>("UI/RankItem"), svList.content, false);
                 RankItem item = obj.GetComponent<RankItem>();
                 item.InitInfo(i+1, list[i].name, list[i].time);
+                rankItems.Add(item);
             }
         }
     }

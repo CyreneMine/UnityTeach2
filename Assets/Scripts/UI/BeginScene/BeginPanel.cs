@@ -11,6 +11,7 @@ public class BeginPanel : BasePanel<BeginPanel>
         btnStart.onClick.AddListener((() =>
         {
             HideMe();
+            ChoosePanel.Instance.ShowMe();
         }));
         btnRank.onClick.AddListener((() =>
         {
