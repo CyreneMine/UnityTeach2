@@ -22,3 +22,7 @@
 *.asmdef text eol=lf
 .gitattributes text eol=lf
 .gitignore text eol=lf
+
+# GitHub Linguist: only C# scripts contribute to repository language stats.
+* linguist-vendored
+*.cs -linguist-vendored
