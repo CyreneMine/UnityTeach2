@@ -1,6 +1,6 @@
 # UnityTeach2 当前状态
 
-更新时间：2026-07-08
+更新时间：2026-07-11
 
 ## 项目快照
 
@@ -10,6 +10,12 @@
 - 远端仓库：`https://github.com/CyreneMine/UnityTeach2.git`
 
 ## 已完成
+
+- 进入 46-68p 综合实践，完成开始场景的开始面板、设置面板和排行榜面板基础逻辑。
+- 新增 `BeginScene.unity`、通用 `BasePanel<T>` 面板基类、开始场景 UI 脚本、设置与排行榜数据结构，以及对应 UI Prefab 和字体资源。
+- 设置面板已能读取和保存音乐/音效开关与音量数据；排行榜面板已能读取数据并动态生成排行榜条目。
+- 修复排行榜条目实例化后的异常缩放：将 `SetParent(svList.content)` 改为 `SetParent(svList.content, false)`，避免保留世界变换造成局部缩放和位置异常。
+- 当前三个面板只完成基础逻辑；开始游戏、游戏结果写入排行榜、完整声音控制等功能需要在后续游戏场景中接入。
 
 - 确认 Unity 工程存在。
 - 确认当前项目未包含已有 `AGENTS.md`、`README.md` 或 `LearningProgress.md`。
@@ -66,7 +72,14 @@
 
 ## 当前项目内容
 
-- `Assets/Scenes/SampleScene.unity`
+- [Assets/Scenes/BeginScene.unity](../Assets/Scenes/BeginScene.unity)
+- [Assets/Scripts/UI/BasePanel.cs](../Assets/Scripts/UI/BasePanel.cs)
+- [Assets/Scripts/UI/BeginScene/BeginPanel.cs](../Assets/Scripts/UI/BeginScene/BeginPanel.cs)
+- [Assets/Scripts/UI/BeginScene/SettingPanel.cs](../Assets/Scripts/UI/BeginScene/SettingPanel.cs)
+- [Assets/Scripts/UI/BeginScene/RankPanel.cs](../Assets/Scripts/UI/BeginScene/RankPanel.cs)
+- [Assets/Scripts/UI/BeginScene/RankItem.cs](../Assets/Scripts/UI/BeginScene/RankItem.cs)
+- [Assets/Scripts/Data/GameDataMgr.cs](../Assets/Scripts/Data/GameDataMgr.cs)
+- [Assets/Resources/UI/RankItem.prefab](../Assets/Resources/UI/RankItem.prefab)
 - `Assets/InputSystem_Actions.inputactions`
 - `Assets/Editor`
 - `Assets/Plugins`
@@ -125,7 +138,8 @@
 
 ## 下一步
 
-1. 进入 `46.需求分析.mp4`，开始 46-68p 小项目实践。
-2. 实践前先明确场景、UI、资源和脚本目录规划。
-3. 每次 push 前先检查学习文档是否跟上代码和场景进度。
-4. 资源卸载、特效朝向、输入优先级等基础阶段边界，后续在实践项目中继续复查。
+1. 继续制作综合实践后续游戏场景和 UI。
+2. 将开始按钮接入正式场景切换，将游戏结果接入排行榜数据保存。
+3. 补齐声音播放系统与设置面板数据的实际联动。
+4. 复核排行榜多次打开时的条目复用，避免重复实例化。
+5. 每次 push 前先检查学习文档是否跟上代码和场景进度。
