@@ -20,7 +20,8 @@
 - 新增选角面板、角色数据结构和五架飞机 Resources Prefab，实现左右切换、属性显示、鼠标拖动旋转、关闭返回和进入 `GameScene`。
 - `BeginScene` 与 `GameScene` 已加入 Build Settings；Unity 日志确认当前脚本程序集成功重载并加载过 `GameScene`。
 - 开始场景当前基本完成；游戏结果写入排行榜、完整声音控制和 gameplay 仍需在后续 GameScene 中接入。
-- 已知问题：右箭头边界条件使最后一架飞机无法选中；仓库缺少初始 `role.json`，新环境没有本机持久化数据时角色列表为空。
+- 角色数据由用户手动存放在本机 `persistentDataPath`：`C:\Users\22967\AppData\LocalLow\DefaultCompany\UnityTeach2\role.json`，当前包含 5 架飞机的数据。
+- 选角右箭头边界已修正为索引达到 `roleData.list.Count` 时回绕，最后一架飞机可以正常选中。
 
 - 确认 Unity 工程存在。
 - 确认当前项目未包含已有 `AGENTS.md`、`README.md` 或 `LearningProgress.md`。
@@ -147,8 +148,7 @@
 
 ## 下一步
 
-1. 修正选角右箭头的最后一个角色边界。
-2. 为仓库补充可复现的初始角色 JSON 数据，避免只依赖本机 `persistentDataPath`。
-3. 进入 `GameScene` 制作 gameplay，并将游戏结果接入排行榜数据保存。
-4. 补齐声音播放系统与设置面板数据的实际联动。
-5. 每次 push 前先检查学习文档是否跟上代码和场景进度。
+1. 进入 `GameScene` 制作 gameplay，并将游戏结果接入排行榜数据保存。
+2. 补齐声音播放系统与设置面板数据的实际联动。
+3. 后续如需在其他电脑直接运行，再决定是否增加仓库内的默认角色数据或首次运行初始化逻辑。
+4. 每次 push 前先检查学习文档是否跟上代码和场景进度。

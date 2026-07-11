@@ -9,7 +9,7 @@
 - 已识别视频：67 个
 - 当前进度：基础知识主线（1-44p）已完成；综合实践开始场景基本完成
 - 当前阶段：阶段 07 - 综合实践 UI 与数据准备
-- 下一步：修正选角边界与角色初始 JSON，再进入 GameScene gameplay 制作
+- 下一步：进入 GameScene gameplay 制作
 
 备注：课程编号 `45` 是知识点总结，当前不作为主线练习进度的关键节点。
 
@@ -25,7 +25,7 @@
 | 04 | 延迟函数、协同程序、协程原理 | 已完成 | 能说明生命周期、停止条件和时间缩放影响 |
 | 05 | 特殊文件夹、`Resources`、场景异步加载 | 已完成 | 已验证路径、异步加载和场景切换；资源卸载边界留到实践中继续复查 |
 | 06 | `LineRenderer`、范围检测、射线检测 | 已完成 | 能验证坐标、层级、碰撞体、射线命中和基础可视化效果 |
-| 07 | 综合实践 UI 与数据准备 | 基本完成 | 开始、设置、排行榜、选角和 GameScene 跳转已实现；右箭头边界与角色初始 JSON 待修正 |
+| 07 | 综合实践 UI 与数据准备 | 基本完成 | 开始、设置、排行榜、选角和 GameScene 跳转已实现；角色 JSON 按当前方案存放在本机持久化目录 |
 | 08 | 综合实践 gameplay 逻辑 | 未开始 | 能验证玩家、子弹、开火点、状态切换和重复进入 |
 | 09 | 实践总结、仓库复盘、可展示成果 | 未开始 | 完成最终复盘、GitHub 文档和可选 Release |
 
@@ -62,7 +62,8 @@
 - 排查并修复 UI 实例化缩放问题：`Transform.SetParent(parent)` 默认保留世界变换，导致动态排行榜条目在进入 Canvas/Content 后产生异常局部缩放，虽然 TMP 字号仍是 `36`，视觉尺寸却明显放大；改为 `SetParent(svList.content, false)` 后让条目采用父节点的局部坐标与缩放体系。
 - 验证方式：运行时检查动态生成的 `RankItem(Clone)`，确认 `Local Scale = (1,1,1)`、Z 坐标正常，字体显示尺寸与 Prefab 一致，Content 内容可以在 Game 窗口中显示并滚动。
 - 检查确认当前脚本已成功触发 Unity 程序集重载，Unity 日志中也记录了 `GameScene` 成功加载。
-- 当前问题：右箭头使用 `nowSelHeroIndex >= roleData.list.Count - 1`，导致最后一架飞机无法通过右箭头选中；仓库中还没有 `role.json`，当前角色数据依赖本机 `persistentDataPath`，新环境或清空数据后角色列表为空。
+- 更正检查结论：角色数据由用户手动放置在 `C:\Users\22967\AppData\LocalLow\DefaultCompany\UnityTeach2\role.json`，包含 5 架飞机的数据；这是当前实践有意采用的本机持久化数据方案，不作为代码错误处理。
+- 右箭头回绕条件已由 `>= roleData.list.Count - 1` 修正为 `>= roleData.list.Count`，现在能够选中最后一架飞机后再回到第一架。
 - 后续边界：游戏结果写入排行榜、完整音乐音效控制和实际 gameplay 仍需要在 GameScene 中继续完成。
 - 新增笔记：`Notes/Practice46-68-BeginSceneUI.md`。
 

@@ -40,7 +40,7 @@ public class ChoosePanel : BasePanel<ChoosePanel>
         btnRight.onClick.AddListener((() =>
         {
             GameDataMgr.Instance.nowSelHeroIndex++;
-            if (GameDataMgr.Instance.nowSelHeroIndex >= GameDataMgr.Instance.roleData.list.Count-1)
+            if (GameDataMgr.Instance.nowSelHeroIndex >= GameDataMgr.Instance.roleData.list.Count)
                 GameDataMgr.Instance.nowSelHeroIndex = 0;
             ChangeNowHero();
         }));

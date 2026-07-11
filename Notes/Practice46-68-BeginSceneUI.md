@@ -7,7 +7,7 @@
 - 状态：学习中
 - 阶段：46-68p 综合实践项目
 - 当前完成：开始、设置、排行榜、选角面板的主流程，以及进入 `GameScene`
-- 待后续完成：选角边界修正、初始角色 JSON、gameplay、游戏结果写入排行榜、完整音乐与音效联动
+- 待后续完成：gameplay、游戏结果写入排行榜、完整音乐与音效联动
 
 ## 技术路线调整
 
@@ -102,13 +102,12 @@ GameObject obj = Instantiate(prefab, svList.content, false);
 
 - 设置数据已经可以读写，但音效系统和完整场景生命周期仍待后续联动验证。
 - 游戏结果尚未接入排行榜数据。
-- 右箭头当前使用 `nowSelHeroIndex >= roleData.list.Count - 1` 判断回绕；索引到达最后一个元素时会直接归零，因此最后一架飞机无法通过右箭头选中。正确边界应在索引达到 `Count` 时才回绕，留待下一步由用户修正。
-- 当前仓库中没有 `role.json`。`JsonMgr` 会先读取 `StreamingAssets/role.json`，不存在时再读取本机 `persistentDataPath/role.json`；因此当前运行依赖本机已有数据，换电脑或清除持久化数据后 `roleData.list` 为空，选角时会越界。
+- 右箭头最初使用 `nowSelHeroIndex >= roleData.list.Count - 1` 判断回绕，导致最后一架飞机无法选中；现已修正为索引达到 `roleData.list.Count` 时才归零。
+- 角色数据由用户手动放置在 `C:\Users\22967\AppData\LocalLow\DefaultCompany\UnityTeach2\role.json`。文件当前包含 5 架飞机的 `hp`、`speed`、`volume`、`resName` 和 `scale` 数据，这是本次实践有意采用的本机持久化数据方案。
+- 本机持久化 JSON 不进入 Git。当前机器运行没有问题；如果后续需要换电脑或让仓库克隆后直接运行，再补充默认数据或首次运行初始化机制。
 - `RoleInfo.resName` 当前尚未参与资源加载，飞机资源仍按照角色索引拼接 `Airplane1` 到 `Airplane5`；实践后续可对照教程决定是否改为数据驱动路径。
 
 ## 下一步
 
-- 修正选角右箭头的回绕条件。
-- 补充初始 `role.json`，验证新环境首次运行也能正常选角。
 - 继续制作 `GameScene` gameplay。
 - 在游戏结束时保存排行榜数据，并复核排行榜刷新行为。
