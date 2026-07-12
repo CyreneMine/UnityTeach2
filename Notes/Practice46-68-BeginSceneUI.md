@@ -1,13 +1,13 @@
 # 综合实践：开始场景 UI 基础逻辑
 
-更新时间：2026-07-11
+更新时间：2026-07-12
 
 ## 当前进度
 
-- 状态：学习中
+- 状态：已完成
 - 阶段：46-68p 综合实践项目
-- 当前完成：开始、设置、排行榜、选角面板的主流程，以及进入 `GameScene`
-- 待后续完成：gameplay、游戏结果写入排行榜、完整音乐与音效联动
+- 当前完成：开始、设置、排行榜、选角面板主流程，以及进入 `GameScene`
+- 后续衔接：gameplay、排行榜写入和音效联动已完成，详见 `Notes/Practice46-68-Gameplay.md`
 
 ## 技术路线调整
 
@@ -98,16 +98,13 @@ GameObject obj = Instantiate(prefab, svList.content, false);
 5. 确认字号 `36` 的最终视觉尺寸与 RankItem Prefab 一致。
 6. 确认条目能在 Viewport 中显示，并随 Content 正常滚动。
 
-## 当前边界
+## 阶段收尾
 
-- 设置数据已经可以读写，但音效系统和完整场景生命周期仍待后续联动验证。
-- 游戏结果尚未接入排行榜数据。
+- 设置数据已经接入背景音乐和子弹死亡音效；游戏结束结果也已写入排行榜。
 - 右箭头最初使用 `nowSelHeroIndex >= roleData.list.Count - 1` 判断回绕，导致最后一架飞机无法选中；现已修正为索引达到 `roleData.list.Count` 时才归零。
-- 角色数据由用户手动放置在 `C:\Users\22967\AppData\LocalLow\DefaultCompany\UnityTeach2\role.json`。文件当前包含 5 架飞机的 `hp`、`speed`、`volume`、`resName` 和 `scale` 数据，这是本次实践有意采用的本机持久化数据方案。
-- 本机持久化 JSON 不进入 Git。当前机器运行没有问题；如果后续需要换电脑或让仓库克隆后直接运行，再补充默认数据或首次运行初始化机制。
-- `RoleInfo.resName` 当前尚未参与资源加载，飞机资源仍按照角色索引拼接 `Airplane1` 到 `Airplane5`；实践后续可对照教程决定是否改为数据驱动路径。
+- 角色配置已迁移到 `Assets/StreamingAssets/role.json`，克隆仓库或构建 Windows 程序时可以随项目读取；音乐设置和排行榜仍保留在可写的 `persistentDataPath`。
+- `RoleInfo.resName` 已由 `Main` 用于动态加载所选飞机资源。
 
 ## 下一步
 
-- 继续制作 `GameScene` gameplay。
-- 在游戏结束时保存排行榜数据，并复核排行榜刷新行为。
+- 本笔记负责的开始场景阶段已经结束；后续维护以 gameplay 综合复盘和仓库当前状态为准。

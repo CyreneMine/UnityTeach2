@@ -1,6 +1,6 @@
 # UnityTeach2 当前状态
 
-更新时间：2026-07-11
+更新时间：2026-07-12
 
 ## 项目快照
 
@@ -12,16 +12,19 @@
 ## 已完成
 
 - 确认综合实践技术路线：原教程使用 `NGUI + XML`，本项目改用 `UGUI + JSON`，保留教程的功能目标，但不照搬旧 UI 框架和 XML 数据实现。
-- 进入 46-68p 综合实践，完成开始场景的开始面板、设置面板和排行榜面板基础逻辑。
+- 46-68p 综合实践已经完成，基础课程与小实践主线全部收尾。
 - 新增 `BeginScene.unity`、通用 `BasePanel<T>` 面板基类、开始场景 UI 脚本、设置与排行榜数据结构，以及对应 UI Prefab 和字体资源。
 - 设置面板已能读取和保存音乐/音效开关与音量数据；排行榜面板已能读取数据并动态生成排行榜条目。
 - 修复排行榜条目实例化后的异常缩放：将 `SetParent(svList.content)` 改为 `SetParent(svList.content, false)`，避免保留世界变换造成局部缩放和位置异常。
 - 排行榜新条目已加入复用列表，重复打开时可以更新已有条目，不再重复实例化同一批内容。
 - 新增选角面板、角色数据结构和五架飞机 Resources Prefab，实现左右切换、属性显示、鼠标拖动旋转、关闭返回和进入 `GameScene`。
-- `BeginScene` 与 `GameScene` 已加入 Build Settings；Unity 日志确认当前脚本程序集成功重载并加载过 `GameScene`。
-- 开始场景当前基本完成；游戏结果写入排行榜、完整声音控制和 gameplay 仍需在后续 GameScene 中接入。
-- 角色数据由用户手动存放在本机 `persistentDataPath`：`C:\Users\22967\AppData\LocalLow\DefaultCompany\UnityTeach2\role.json`，当前包含 5 架飞机的数据。
+- `BeginScene` 与 `GameScene` 已加入 Build Settings；开始、设置、排行榜、选角、游戏、退出确认、游戏结束和返回开始场景的流程已经串联。
+- `GameScene` 已实现角色数据生成玩家、移动和屏幕边界、生命与计时、八方向开火、随机发射模式、五类子弹轨迹、鼠标消弹、碰撞受伤、死亡特效和音效。
+- 游戏结束会把姓名和存活时间写入排行榜；音乐和音效设置已接入实际播放逻辑。
+- `role.json`、`bullet.json`、`fire.json` 已迁移到 `Assets/StreamingAssets/`；`music.json`、`rank.json` 继续保存在 `persistentDataPath`。
+- 五架飞机 Prefab 当前不自带 `PlayerObject`，由 `Main` 根据选角结果实例化后动态添加组件、设置 `Player` Tag 并应用角色属性。
 - 选角右箭头边界已修正为索引达到 `roleData.list.Count` 时回绕，最后一架飞机可以正常选中。
+- 已归档 JSON 字段大小写、UI 父节点缩放、Quaternion 方向转换、旋转轴、Translate 坐标空间、重复碰撞回调和音源生命周期等实践排错过程。
 
 - 确认 Unity 工程存在。
 - 确认当前项目未包含已有 `AGENTS.md`、`README.md` 或 `LearningProgress.md`。
@@ -62,7 +65,7 @@
 - 完成 `37.场景异步加载.mp4` 和 `38.场景异步加载  练习题.mp4`，新增 `Lesson20_场景异步加载` 场景、测试脚本和 `SceneMgr`。
 - `SceneMgr` 当前封装 `SceneManager.LoadSceneAsync`，并在 `AsyncOperation.completed` 中调用外部传入的回调。
 - `ProjectSettings/EditorBuildSettings.asset` 已加入 `Lesson20_1.unity` 和 `Lesson20_2.unity`，用于验证场景异步加载。
-- 阶段 05 - 特殊文件夹、`Resources`、场景异步加载 当前主线已推进到场景异步加载；资源卸载边界仍待后续复盘验证。
+- 阶段 05 - 特殊文件夹、`Resources`、场景异步加载 已完成；资源卸载的深入边界保留为后续扩展复盘项。
 - 完成 `39.LineRenderer.mp4` 和 `40.LineRenderer  练习题.mp4`，新增 `Lesson21_LineRender` 场景和脚本。
 - `Lesson21` 当前包含 `DrawSphere(center, radius)` 画圆方法，以及按住鼠标时用 `LineRenderer` 绘制鼠标移动轨迹的逻辑。
 - 已归档 `ScreenToWorldPoint` 理解补充：鼠标屏幕坐标转世界坐标前需要给 `Input.mousePosition.z` 设置“离摄像机多远”的深度。
@@ -74,7 +77,7 @@
 - 新增命中特效资源：`Assets/Resources/Effect/HitEff.prefab`、`Assets/Resources/Effect/DDD.prefab`，以及 `Assets/ArtRes/BulletEff/` 下的特效资源。
 - 阶段 06 - `LineRenderer`、范围检测、射线检测 已收尾。
 - 基础知识主线 1-44p 已结束；`45` 是知识点总结，不作为新的主线练习节点。
-- 下一步进入 `46.需求分析.mp4`，开始 46-68p 小项目实践。
+- 基础知识主线结束后已进入并完成 46-68p 小项目实践。
 
 ## 当前项目内容
 
@@ -144,11 +147,10 @@
 - `Packages/manifest.json`
 - `ProjectSettings/`
 
-当前基础知识主线已结束，后续重点转入综合实践项目。实践阶段的代码、场景、Prefab、UI、数据和资源变更都应在 `LearningProgress.md` 或 `Notes/` 中记录。
+当前基础知识主线和综合实践均已结束。后续变更应作为维护或扩展内容单独记录，不再计入本课程主线进度。
 
 ## 下一步
 
-1. 进入 `GameScene` 制作 gameplay，并将游戏结果接入排行榜数据保存。
-2. 补齐声音播放系统与设置面板数据的实际联动。
-3. 后续如需在其他电脑直接运行，再决定是否增加仓库内的默认角色数据或首次运行初始化逻辑。
-4. 每次 push 前先检查学习文档是否跟上代码和场景进度。
+1. 本系列项目已完成，后续可选择创建 GitHub Release 作为阶段成果。
+2. 如继续扩展，可优先考虑对象池、统一音效管理和更明确的场景生命周期。
+3. 每次 push 前继续检查学习文档是否跟上代码、场景和验证状态。
