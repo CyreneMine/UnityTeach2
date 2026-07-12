@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5913225772515150814}
   - component: {fileID: 1058161507993188211}
-  - component: {fileID: 4970360964474778065}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,18 +54,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4970360964474778065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 749113777908909555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813453bd43295974299b2f2ccdd80efa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BulletObject
 --- !u!1001 &612167474283759128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78,6 +65,22 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ba2aede8bc059f741961151f4bbdb31f, type: 3}
       propertyPath: m_Name
       value: FireDome
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ba2aede8bc059f741961151f4bbdb31f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: ba2aede8bc059f741961151f4bbdb31f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: ba2aede8bc059f741961151f4bbdb31f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 153798, guid: ba2aede8bc059f741961151f4bbdb31f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ba2aede8bc059f741961151f4bbdb31f, type: 3}
       propertyPath: m_LocalScale.x

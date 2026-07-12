@@ -5,10 +5,12 @@ public class BulletObject : MonoBehaviour
 {
     private BulletInfo info;
     private float time;
+    private AudioSource audioSource;
     public void InitInfo(BulletInfo info)
     {
         this.info = info;
         Invoke("LifeDead",info.lifeTime);
+        
     }
 
     public void LifeDead()
@@ -19,6 +21,10 @@ public class BulletObject : MonoBehaviour
     {
         GameObject eff = Instantiate(Resources.Load<GameObject>(info.deadEffRes));
         eff.transform.position = transform.position;
+        audioSource = eff.gameObject.GetComponent<AudioSource>();
+        audioSource.volume = GameDataMgr.Instance.musicData.soundValue;
+        audioSource.mute = !GameDataMgr.Instance.musicData.soundIsOpen;
+        audioSource.Play();
         Destroy(eff, 1f);
         Destroy(gameObject);
     }
@@ -35,12 +41,11 @@ public class BulletObject : MonoBehaviour
     private void Update()
     {
         time  += Time.deltaTime;
-        //TODO 测试是否正常旋转时候移动
-        transform.Translate(transform.forward * info.forwardSpeed * Time.deltaTime);
+        transform.Translate(Vector3.forward * info.forwardSpeed * Time.deltaTime);
         switch (info.type)
         {
             case 2:
-                transform.Translate(transform.right * Mathf.Sin(time * info.roundSpeed)*info.rightSpeed*10*Time.deltaTime);
+                transform.Translate(Vector3.right * Mathf.Sin(time * info.roundSpeed)*info.rightSpeed*10*Time.deltaTime);
                 break;
             case 3:
                 transform.rotation *= Quaternion.AngleAxis(info.roundSpeed*Time.deltaTime*0.5f, Vector3.up);

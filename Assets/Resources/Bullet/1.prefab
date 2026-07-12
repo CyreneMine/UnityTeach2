@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3314489357460167656}
   - component: {fileID: 5835119671270488238}
-  - component: {fileID: -929040070106579667}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,18 +54,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-929040070106579667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8744396586597128548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813453bd43295974299b2f2ccdd80efa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BulletObject
 --- !u!1001 &8950488937100391280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75,9 +62,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3314489357460167656}
     m_Modifications:
+    - target: {fileID: 100000, guid: fd94e570fa7cd8b46b9e2e85bf3beb23, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: fd94e570fa7cd8b46b9e2e85bf3beb23, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: fd94e570fa7cd8b46b9e2e85bf3beb23, type: 3}
       propertyPath: m_Name
       value: ArcaneDome
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: fd94e570fa7cd8b46b9e2e85bf3beb23, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: fd94e570fa7cd8b46b9e2e85bf3beb23, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 115124, guid: fd94e570fa7cd8b46b9e2e85bf3beb23, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: fd94e570fa7cd8b46b9e2e85bf3beb23, type: 3}
       propertyPath: m_LocalScale.x

@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8830219612304360321}
   - component: {fileID: 6330254682947575749}
-  - component: {fileID: -4887907572143899099}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,18 +54,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-4887907572143899099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7793892825545061373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813453bd43295974299b2f2ccdd80efa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BulletObject
 --- !u!1001 &5983226644060893228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75,9 +62,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8830219612304360321}
     m_Modifications:
+    - target: {fileID: 100000, guid: 37c5928458838164f9cf40703fd86222, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 37c5928458838164f9cf40703fd86222, type: 3}
       propertyPath: m_Name
       value: EarthDome
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 37c5928458838164f9cf40703fd86222, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 37c5928458838164f9cf40703fd86222, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 37c5928458838164f9cf40703fd86222, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 37c5928458838164f9cf40703fd86222, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 148204, guid: 37c5928458838164f9cf40703fd86222, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 170444, guid: 37c5928458838164f9cf40703fd86222, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 190828, guid: 37c5928458838164f9cf40703fd86222, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 37c5928458838164f9cf40703fd86222, type: 3}
       propertyPath: m_LocalScale.x
@@ -93,7 +112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 37c5928458838164f9cf40703fd86222, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.58
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 37c5928458838164f9cf40703fd86222, type: 3}
       propertyPath: m_LocalPosition.y
@@ -101,7 +120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 37c5928458838164f9cf40703fd86222, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.59
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 37c5928458838164f9cf40703fd86222, type: 3}
       propertyPath: m_LocalRotation.w
