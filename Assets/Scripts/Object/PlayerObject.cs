@@ -47,7 +47,15 @@ public class PlayerObject : MonoBehaviour
         else
             targetRot = wValue < 0 ? Quaternion.AngleAxis(20f, Vector3.forward) : Quaternion.AngleAxis(-20f, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRot,roundSpeed * Time.deltaTime);
-        
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit,1000,1<<LayerMask.NameToLayer("Monster")))
+            {
+                BulletObject bullet = hit.collider.GetComponent<BulletObject>();
+                bullet.Dead();
+            }
+        }
         
     }
     
