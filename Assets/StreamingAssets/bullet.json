@@ -1,0 +1,204 @@
+{
+    "bulletInfoList":  [
+                           {
+                               "id":  1,
+                               "type":  1,
+                               "forwardSpeed":  60,
+                               "rightSpeed":  0,
+                               "roundSpeed":  0,
+                               "resName":  "Bullet/1",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           },
+                           {
+                               "id":  2,
+                               "type":  1,
+                               "forwardSpeed":  70,
+                               "rightSpeed":  0,
+                               "roundSpeed":  0,
+                               "resName":  "Bullet/2",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           },
+                           {
+                               "id":  3,
+                               "type":  1,
+                               "forwardSpeed":  80,
+                               "rightSpeed":  0,
+                               "roundSpeed":  0,
+                               "resName":  "Bullet/3",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           },
+                           {
+                               "id":  4,
+                               "type":  1,
+                               "forwardSpeed":  90,
+                               "rightSpeed":  0,
+                               "roundSpeed":  0,
+                               "resName":  "Bullet/4",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           },
+                           {
+                               "id":  5,
+                               "type":  2,
+                               "forwardSpeed":  60,
+                               "rightSpeed":  20,
+                               "roundSpeed":  6,
+                               "resName":  "Bullet/1",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           },
+                           {
+                               "id":  6,
+                               "type":  2,
+                               "forwardSpeed":  70,
+                               "rightSpeed":  200,
+                               "roundSpeed":  0,
+                               "resName":  "Bullet/2",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           },
+                           {
+                               "id":  7,
+                               "type":  2,
+                               "forwardSpeed":  80,
+                               "rightSpeed":  200,
+                               "roundSpeed":  0,
+                               "resName":  "Bullet/3",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           },
+                           {
+                               "id":  8,
+                               "type":  2,
+                               "forwardSpeed":  90,
+                               "rightSpeed":  200,
+                               "roundSpeed":  0,
+                               "resName":  "Bullet/4",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           },
+                           {
+                               "id":  9,
+                               "type":  3,
+                               "forwardSpeed":  60,
+                               "rightSpeed":  150,
+                               "roundSpeed":  30,
+                               "resName":  "Bullet/1",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           },
+                           {
+                               "id":  10,
+                               "type":  3,
+                               "forwardSpeed":  70,
+                               "rightSpeed":  150,
+                               "roundSpeed":  30,
+                               "resName":  "Bullet/2",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           },
+                           {
+                               "id":  11,
+                               "type":  3,
+                               "forwardSpeed":  80,
+                               "rightSpeed":  150,
+                               "roundSpeed":  30,
+                               "resName":  "Bullet/3",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           },
+                           {
+                               "id":  12,
+                               "type":  3,
+                               "forwardSpeed":  90,
+                               "rightSpeed":  150,
+                               "roundSpeed":  30,
+                               "resName":  "Bullet/4",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           },
+                           {
+                               "id":  13,
+                               "type":  4,
+                               "forwardSpeed":  60,
+                               "rightSpeed":  150,
+                               "roundSpeed":  30,
+                               "resName":  "Bullet/1",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           },
+                           {
+                               "id":  14,
+                               "type":  4,
+                               "forwardSpeed":  70,
+                               "rightSpeed":  150,
+                               "roundSpeed":  30,
+                               "resName":  "Bullet/2",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           },
+                           {
+                               "id":  15,
+                               "type":  4,
+                               "forwardSpeed":  80,
+                               "rightSpeed":  150,
+                               "roundSpeed":  30,
+                               "resName":  "Bullet/3",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           },
+                           {
+                               "id":  16,
+                               "type":  4,
+                               "forwardSpeed":  90,
+                               "rightSpeed":  150,
+                               "roundSpeed":  30,
+                               "resName":  "Bullet/4",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           },
+                           {
+                               "id":  17,
+                               "type":  5,
+                               "forwardSpeed":  60,
+                               "rightSpeed":  0,
+                               "roundSpeed":  40,
+                               "resName":  "Bullet/1",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           },
+                           {
+                               "id":  18,
+                               "type":  5,
+                               "forwardSpeed":  70,
+                               "rightSpeed":  0,
+                               "roundSpeed":  40,
+                               "resName":  "Bullet/2",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           },
+                           {
+                               "id":  19,
+                               "type":  5,
+                               "forwardSpeed":  80,
+                               "rightSpeed":  0,
+                               "roundSpeed":  40,
+                               "resName":  "Bullet/3",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           },
+                           {
+                               "id":  20,
+                               "type":  5,
+                               "forwardSpeed":  90,
+                               "rightSpeed":  0,
+                               "roundSpeed":  40,
+                               "resName":  "Bullet/4",
+                               "deadEffRes":  "DeadEff/1",
+                               "lifeTime":  8
+                           }
+                       ]
+}
