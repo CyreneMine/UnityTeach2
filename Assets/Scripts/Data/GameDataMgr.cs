@@ -4,18 +4,20 @@ public class GameDataMgr
 {
     private static GameDataMgr instance = new GameDataMgr();
     public static GameDataMgr Instance => instance;
-
+    public MusicData musicData;
+    public RankData rankData;
+    public RoleData roleData;
+    public BulletData bulletData;
+    public FireData fireData;
     private GameDataMgr()
     {
         musicData = JsonMgr.Instance.LoadData<MusicData>("music");
         rankData = JsonMgr.Instance.LoadData<RankData>("rank");
         roleData = JsonMgr.Instance.LoadData<RoleData>("role");
         bulletData = JsonMgr.Instance.LoadData<BulletData>("bullet");
+        fireData = JsonMgr.Instance.LoadData<FireData>("fire");
     }
-    public MusicData musicData;
-    public RankData rankData;
-    public RoleData roleData;
-    public BulletData bulletData;
+    
     public int nowSelHeroIndex = 0;
 
     #region 音频相关
