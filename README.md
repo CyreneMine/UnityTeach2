@@ -1,6 +1,6 @@
 # UnityTeach2
 
-> **项目状态：已完结。** 下一阶段将在 [UnityTeach3](https://github.com/CyreneMine/UnityTeach3) 中继续（仓库待创建）。
+> **项目状态：已完结。** 下一阶段将在 [UnityTeach3](https://github.com/CyreneMine/UnityTeach3) 中继续。
 
 UnityTeach2 是一个 Unity 基础教程学习仓库，用来跟随「[唐老狮] Unity 四部曲 - 基础」课程进行练习、复盘和阶段性整理。
 
